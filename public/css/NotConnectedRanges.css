@@ -1,0 +1,54 @@
+.notconnected-ranges {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.notconnected-ranges h1 {
+    text-align: center;
+}
+
+.notconnected-ranges a {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.notconnected-ranges a span {
+    display: inline-block;
+    padding: 8px 16px 8px 16px;
+    border: 1px solid #9964cd;
+    border-radius: 4px;
+    transition: all 0.3s ease 0s;
+    font-size: 20px;
+    color: #404040;
+}
+
+.notconnected-ranges a:hover span {
+    color: #404040;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+.notconnected-ranges .btn-inscription {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.notconnected-ranges .btn-inscription span {
+    display: inline-block;
+    padding: 8px 16px 8px 16px;
+    border: 1px solid #003668;
+    background: #003668;
+    border-radius: 4px;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+    font-size: 20px;
+}
+
+.notconnected-ranges .btn-inscription:hover span {
+    color:#fff;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+}
