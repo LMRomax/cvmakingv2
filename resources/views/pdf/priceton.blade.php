@@ -33,32 +33,54 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
             --black: rgb(51, 51, 53);
         }
 
+        body {
+            width: 210mm;
+            height: 297mm;
+            padding: 16px;
+        }
+
         p {
             margin-bottom: 0;
         }
 
         .page {
             background: white;
-            padding: 48px 72px;
+        }
+
+        .table { 
+            display: table; 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 0;
+        }
+
+        .table-row { 
+            display: table-row; 
+        }
+
+        .table-cell { 
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .table-cell.w-64 {
+            width: 64px;
         }
 
         .avatar-name {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             color: #424954;
         }
 
         .avatar-name img {
-            width: 128px;
-            height: 128px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             margin-right: 16px;
         }
 
         .name {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 600;
         }
 
@@ -131,14 +153,23 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
 
 <body>
     <div class="page">
-        <div class="avatar-name" style="color: {{ $color['primary'] }}">
-            @if ($cv->cvphoto !== null)
-                <img src="{{ asset('cvphoto/' . $cv->cvphoto) }}" alt="Avatar">
-            @endif
-            <div class="name">
-                {{ $cv_basics->makingcv_name }}
+        <div class="avatar-name">
+            <div class="table">
+                <div class="table-row">
+                    <div class="table-cell w-64">
+                        @if ($cv->cvphoto !== null)
+                            <img src="{{ asset('cvphoto/' . $cv->cvphoto) }}" alt="Avatar">
+                        @endif
+                    </div>
+                    <div class="table-cell">
+                        <div class="name">
+                            {{ $cv_basics->makingcv_name }}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class="description">
             {{ $cv->description }}
         </div>
@@ -149,32 +180,32 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
             </div>
             <div class="lists-infos-perso">
                 <div class="table-data">
-                    <table>
-                        <tr>
-                            <td class="td-align-right">{{ __('translations.pdf.barkley.name') }}</td>
-                            <td class="data">{{ $cv_basics->makingcv_name }}</td>
-                        </tr>
-                        <tr>
-                            <td class="td-align-right">{{ __('translations.pdf.barkley.address') }}</td>
-                            <td class="data">
+                    <div>
+                        <div class="table-row">
+                            <div class="table-cell td-align-right">{{ __('translations.pdf.barkley.name') }}</div>
+                            <div class="table-cell data">{{ $cv_basics->makingcv_name }}</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell td-align-right">{{ __('translations.pdf.barkley.address') }}</div>
+                            <div class="table-cell data">
                                 {{ $cv_basics->makingcv_address }}
                                 <br>
                                 {{ $cv_basics->makingcv_zipcode }}
                                 {{ $cv_basics->makingcv_city }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="td-align-right">{{ __('translations.pdf.barkley.tel_number') }}</td>
-                            <td class="data">{{ $cv_basics->makingcv_phone }}</td>
-                        </tr>
-                        <tr>
-                            <td class="td-align-right">{{ __('translations.pdf.barkley.email') }}</td>
-                            <td class="data">{{ $cv_basics->makingcv_email }}</td>
-                        </tr>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell td-align-right">{{ __('translations.pdf.barkley.tel_number') }}</div>
+                            <div class="table-cell data">{{ $cv_basics->makingcv_phone }}</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell td-align-right">{{ __('translations.pdf.barkley.email') }}</div>
+                            <div class="table-cell data">{{ $cv_basics->makingcv_email }}</div>
+                        </div>
                         @if (isset($cv_basics->makingcv_birthdate))
-                            <tr>
-                                <td class="td-align-right">{{ __('translations.pdf.barkley.birthdate') }}</td>
-                                <td class="data">
+                            <div class="table-row">
+                                <div class="table-cell td-align-right">{{ __('translations.pdf.barkley.birthdate') }}</div>
+                                <div class="table-cell data">
                                     @if (app()->getLocale() == 'fr')
                                         {{ date('d/m/Y', strtotime($cv_basics->makingcv_birthdate)) }}
                                     @elseif(app()->getLocale() == "en")
@@ -182,40 +213,40 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                                     @elseif(app()->getLocale() == "es")
                                         {{ date('d/m/Y', strtotime($cv_basics->makingcv_birthdate)) }}
                                     @endif
-                                </td>
-                            </tr>
+                                </div>
+                            </div>
                         @endif
                         @if (isset($cv_basics->makingcv_birthplace))
-                            <tr>
-                                <td class="td-align-right">{{ __('translations.pdf.barkley.birthplace') }}</td>
-                                <td class="data">{{ $cv_basics->makingcv_birthplace }}</td>
-                            </tr>
+                            <div class="table-row">
+                                <div class="table-cell td-align-right">{{ __('translations.pdf.barkley.birthplace') }}</div>
+                                <div class="table-cell data">{{ $cv_basics->makingcv_birthplace }}</div>
+                            </div>
                         @endif
                         @if (isset($cv_basics->makingcv_gender))
-                            <tr>
-                                <td class="td-align-right">{{ __('translations.pdf.barkley.gender') }}</td>
-                                <td class="data">{{ $cv_basics->makingcv_gender }}</td>
-                            </tr>
+                            <div class="table-row">
+                                <div class="table-cell td-align-right">{{ __('translations.pdf.barkley.gender') }}</div>
+                                <div class="table-cell data">{{ $cv_basics->makingcv_gender }}</div>
+                            </div>
                         @endif
                         @if (isset($cv_basics->makingcv_drivinglicenses))
-                            <tr>
-                                <td class="td-align-right">{{ __('translations.pdf.barkley.permis') }}</td>
-                                <td class="data">{{ $cv_basics->makingcv_drivinglicenses }}</td>
-                            </tr>
+                            <div class="table-row">
+                                <div class="table-cell td-align-right">{{ __('translations.pdf.barkley.permis') }}</div>
+                                <div class="table-cell data">{{ $cv_basics->makingcv_drivinglicenses }}</div>
+                            </div>
                         @endif
                         @if (isset($cv_basics->makingcv_linkedin))
-                            <tr>
-                                <td class="td-align-right">{{ __('translations.pdf.barkley.linkedin') }}</td>
-                                <td class="data">{{ $cv_basics->makingcv_linkedin }}</td>
-                            </tr>
+                            <div class="table-row">
+                                <div class="table-cell td-align-right">{{ __('translations.pdf.barkley.linkedin') }}</div>
+                                <div class="table-cell data">{{ $cv_basics->makingcv_linkedin }}</div>
+                            </div>
                         @endif
                         @if (isset($cv_basics->makingcv_website))
-                            <tr>
-                                <td class="td-align-right">{{ __('translations.pdf.barkley.website') }}</td>
-                                <td class="data">{{ $cv_basics->makingcv_website }}</td>
-                            </tr>
+                            <div class="table-row">
+                                <div class="table-cell td-align-right">{{ __('translations.pdf.barkley.website') }}</div>
+                                <div class="table-cell data">{{ $cv_basics->makingcv_website }}</div>
+                            </div>
                         @endif
-                    </table>
+                    </div>
                 </div>
             </div>
         </section>
@@ -227,9 +258,9 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                 </div>
                 <div class="lists-formations">
                     <div class="table-data table-data-content">
-                        <table>
+                        <div class="table">
                             @foreach ($cv_educs as $key => $cv_educ)
-                                <tr>
+                                <div class="table-row">
                                     <td class="td-align-right date-educ">
                                         @if ($cv_educ->educ_start_month == '01')
                                             {{ __('translations.contentcv.jan') }}
@@ -284,7 +315,7 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                                             {{ __('translations.contentcv.dec') }}
                                         @endif
                                         {{ $cv_educ->educ_end_year }}
-                                    </td>
+                                    </div>
                                     <td class="label-educ">
                                         <p><strong>{{ $cv_educ->contentcv_educ_formation }}</strong></p>
                                         <p class="italic-small">{{ $cv_educ->contentcv_educ_city }} -
@@ -292,10 +323,10 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                                         </p>
                                         <div class="educ-description">{!! nl2br($cv_educ->contentcv_educ_description)
                                             !!}</div>
-                                    </td>
-                                </tr>
+                                    </div>
+                                </div>
                             @endforeach
-                        </table>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -308,9 +339,9 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                 </div>
                 <div class="lists-xps">
                     <div class="table-data table-data-content">
-                        <table>
+                        <div class="table">
                             @foreach ($cv_xps as $key => $cv_xp)
-                                <tr>
+                                <div class="table-row">
                                     <td class="td-align-right date-educ">
                                         @if ($cv_xp->xp_start_month == '01')
                                             {{ __('translations.contentcv.jan') }}
@@ -365,7 +396,7 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                                             {{ __('translations.contentcv.dec') }}
                                         @endif
                                         {{ $cv_xp->xp_end_year }}
-                                    </td>
+                                    </div>
                                     <td>
                                         <p><strong>{{ $cv_xp->contentcv_xp_poste }}</strong></p>
                                         <p class="italic-small">
@@ -374,10 +405,10 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                                         </p>
                                         <div class="educ-description"> {!! nl2br($cv_xp->contentcv_xp_description) !!}
                                         </div>
-                                    </td>
-                                </tr>
+                                    </div>
+                                </div>
                             @endforeach
-                        </table>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -390,11 +421,11 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                 </div>
                 <div class="list-comps">
                     <div class="table-data">
-                        <table>
+                        <div class="table">
                             @foreach ($cv_comps as $key => $cv_comp)
-                                <tr>
-                                    <td class="td-align-right date-educ">{{ $cv_comp->contentcv_comp_name }}</td>
-                                    <td class="data">
+                                <div class="table-row">
+                                    <td class="td-align-right date-educ">{{ $cv_comp->contentcv_comp_name }}</div>
+                                    <div class="table-cell data">
                                         @if ($cv_comp->contentcv_comp_level == 25)
                                             {{ __('translations.contentcv.elementary') }}
                                         @elseif($cv_comp->contentcv_comp_level == 50)
@@ -404,10 +435,10 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                                         @elseif($cv_comp->contentcv_comp_level == 100)
                                             {{ __('translations.contentcv.very_good') }}
                                         @endif
-                                    </td>
-                                </tr>
+                                    </div>
+                                </div>
                             @endforeach
-                        </table>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -420,13 +451,13 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                 </div>
                 <div class="list-langs">
                     <div class="table-data">
-                        <table>
+                        <div class="table">
                             @foreach ($cv_langs as $key => $cv_lang)
-                                <tr>
+                                <div class="table-row">
                                     <td class="td-align-right date-educ">
                                         {{ $cv_lang->contentcv_lang_name }}
-                                    </td>
-                                    <td class="data">
+                                    </div>
+                                    <div class="table-cell data">
                                         @if ($cv_lang->contentcv_lang_level == '100')
                                             {{ __('translations.contentcv.maternal_lang') }}
                                         @elseif($cv_lang->contentcv_lang_level == "75")
@@ -438,10 +469,10 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                                         @elseif($cv_lang->contentcv_lang_level == "15")
                                             {{ __('translations.contentcv.elementary_lang') }}
                                         @endif
-                                    </td>
-                                </tr>
+                                    </div>
+                                </div>
                             @endforeach
-                        </table>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -454,16 +485,16 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                 </div>
                 <div class="list-refs">
                     <div class="table-data">
-                        <table>
+                        <div class="table">
                             @foreach ($cv_refs as $key => $cv_ref)
-                                <tr>
-                                    <td class="td-align-right date-educ">{{ $cv_ref->contentcv_ref_name }}</td>
-                                    <td class="data">
+                                <div class="table-row">
+                                    <td class="td-align-right date-educ">{{ $cv_ref->contentcv_ref_name }}</div>
+                                    <div class="table-cell data">
                                         {{ $cv_ref->contentcv_ref_contact }}
-                                    </td>
-                                </tr>
+                                    </div>
+                                </div>
                             @endforeach
-                        </table>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -476,13 +507,13 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
                 </div>
                 <div class="list-hobbies">
                     <div class="table-data">
-                        <table>
+                        <div class="table">
                             @foreach ($cv_hobbies as $key => $cv_hobby)
-                                <tr>
-                                    <td>{{ $cv_hobby->contentcv_hobbies_hobby }},</td>
-                                </tr>
+                                <div class="table-row">
+                                    <td>{{ $cv_hobby->contentcv_hobbies_hobby }},</div>
+                                </div>
                             @endforeach
-                        </table>
+                        </div>
                     </div>
                 </div>
             </section>

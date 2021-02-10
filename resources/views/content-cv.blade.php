@@ -105,7 +105,7 @@
                                 <div class="iframe-isload" style="display: none;">
                                     <div id="iframe-loader" class="loader"></div>
                                 </div>
-                                <div data-toggle="modal" data-target="#cvModal"> 
+                                <div class="preview--inner" data-toggle="modal" data-target="#cvModal"> 
                                     <iframe src="{{ route('pdf') }}" width="100%" class="template-preview__iframe"
                                         scrolling="no" id="previewCVIframe" data-toggle="modal" data-target="#cvModal">
                                     </iframe>
@@ -134,11 +134,13 @@
             <span aria-hidden="true">&times;</span>
         </button>
         <div class="modal-dialog" role="document">
-            <div class="preview-wrapper">
-                <div>
-                    <iframe src="{{ route('pdf') }}" width="100%" class="template-preview__iframe"
-                        scrolling="no">
-                    </iframe>
+            <div class="modal-preview">
+                <div class="preview-wrapper">
+                    <div class="preview--inner">
+                        <iframe src="{{ route('pdf') }}" class="template-preview__iframe"
+                            scrolling="no">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>

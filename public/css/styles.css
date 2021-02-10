@@ -1297,16 +1297,23 @@ textarea.form-control {
 }
 
 .cvpreview-inner .preview-wrapper {
+    text-align: center;
+    padding: 24px;
+}
+
+.cvpreview-inner .preview--inner {
     display: inline-block;
-    width: 100%;
-    height: 550px;
+    width: 200px;
+    height: 283px;
     text-align: center;
     cursor: pointer;
     overflow: hidden;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+    border: 0 solid #fff;
     border-radius: 4px;
-    padding: 16px 24px 24px;
+    -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
 }
 
 .cvpreview-inner .preview-wrapper .iframe-isload {
@@ -1332,12 +1339,14 @@ textarea.form-control {
     display: inline-block;
     position: relative;
     background: #fff;
-    height: 2039px;
-    width: 1440px;
+    height: 1120px;
+    width: 790px;
+    /* margin: auto; */
     -webkit-transform: scale(0.253);
     transform: scale(0.253);
-    left: 42%;
-    margin-left: -152px;
+    max-height: 1133px;
+    left: 50%;
+    margin-left: -100px;
     border: none;
     pointer-events: none;
     -webkit-transform-origin: 0 0;
@@ -1345,9 +1354,6 @@ textarea.form-control {
     -webkit-transition: all .6s ease;
     transition: all .6s ease;
     cursor: pointer;
-    border-radius: 10px;
-    -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
-    box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
 }
 
 .color--choice__text {
@@ -1542,46 +1548,51 @@ textarea.form-control {
     opacity: 1;
 }
 
+.cvPreviewFullPage .modal-dialog .modal-preview {
+    height: 100%;
+    top: calc(50% + 40px);
+    max-width: 520px;
+    margin-top: 0;
+    padding: 0;
+    background: none;
+}
+
 .cvPreviewFullPage .modal-dialog .preview-wrapper {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-    overflow: hidden;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    border-radius: 4px;
-    padding: 16px 24px 24px;
-}
-
-.cvPreviewFullPage .modal-dialog .preview-wrapper div {
-    width: 100%;
-}
-
-.cvPreviewFullPage .modal-dialog iframe {
-    display: inline-block;
     position: relative;
-    margin-left: 10%;
+    top: 0;
+    left: 0;
+    height: calc(100% - 50px);
+}
+
+.cvPreviewFullPage .modal-dialog .preview-wrapper .preview--inner {
+    position: absolute;
     background: #fff;
-    height: 2718px;
-    width: 1920px;
-    -webkit-transform: scale(0.425);
-    transform: scale(0.425);
+    width: 791px;
+    max-height: 1133px;
+    top: 0;
+    left: 0;
     border: none;
     pointer-events: none;
+    height: calc(150% - 100px);
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
-    -webkit-transition: all .6s ease;
-    transition: all .6s ease;
-    cursor: pointer;
-    border-radius: 10px;
-    -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
-    box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
+    -webkit-transform: scale(0.657);
+    transform: scale(0.657);
+    -webkit-box-shadow: 0 0 10px 1px rgb(0 0 0 / 50%);
+    box-shadow: 0 0 10px 1px rgb(0 0 0 / 50%);
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
-.cvPreviewFullPage .modal-dialog {
-    max-width: 100%;
-    padding: 48px;
+.cvPreviewFullPage .modal-dialog .preview-wrapper .preview--inner iframe {
+    position: absolute;
+    background: #fff;
+    width: 791px;
+    max-height: 1133px;
+    top: 0;
+    left: 0;
+    border: none;
+    pointer-events: none;
 }
 
 /* 3.4 Payment */

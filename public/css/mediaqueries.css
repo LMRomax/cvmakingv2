@@ -242,11 +242,10 @@
     .cvPreviewFullPage .modal-dialog iframe {
         margin-left: 5%;
     }
-    .cvpreview-inner .preview-wrapper iframe {
-        height: 1811px;
-        width: 1280px;
-        margin-left: -138px;
-    }
+    /*.cvpreview-inner .preview-wrapper iframe {
+        height: 816px;
+        width: 576px;
+    }*/
 }
 
 @media screen and (max-width: 992px) {
