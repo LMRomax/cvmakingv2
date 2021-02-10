@@ -1303,8 +1303,8 @@ textarea.form-control {
 
 .cvpreview-inner .preview--inner {
     display: inline-block;
-    width: 200px;
-    height: 283px;
+    width: 300px;
+    height: 432px;
     text-align: center;
     cursor: pointer;
     overflow: hidden;
@@ -1340,12 +1340,11 @@ textarea.form-control {
     position: relative;
     background: #fff;
     height: 1120px;
-    width: 790px;
-    /* margin: auto; */
-    -webkit-transform: scale(0.253);
-    transform: scale(0.253);
+    width: 1440px;
+    -webkit-transform: scale(0.385);
+    transform: scale(0.385);
     max-height: 1133px;
-    left: 50%;
+    left: 33%;
     margin-left: -100px;
     border: none;
     pointer-events: none;
@@ -1548,20 +1547,22 @@ textarea.form-control {
     opacity: 1;
 }
 
-.cvPreviewFullPage .modal-dialog .modal-preview {
+.cvPreviewFullPage .modal-dialog {
     height: 100%;
-    top: calc(50% + 40px);
+    top: 5%;
     max-width: 520px;
     margin-top: 0;
     padding: 0;
     background: none;
 }
 
+
 .cvPreviewFullPage .modal-dialog .preview-wrapper {
     position: relative;
     top: 0;
     left: 0;
-    height: calc(100% - 50px);
+    height: 100%;
+    overflow: hidden;
 }
 
 .cvPreviewFullPage .modal-dialog .preview-wrapper .preview--inner {
@@ -1589,6 +1590,7 @@ textarea.form-control {
     background: #fff;
     width: 791px;
     max-height: 1133px;
+    height: calc(150% - 100px);
     top: 0;
     left: 0;
     border: none;
@@ -1642,28 +1644,36 @@ textarea.form-control {
 }
 
 .explain-download .preview-wrapper {
+    text-align: center;
+    padding: 24px;
+}
+
+.explain-download .preview--inner {
     display: inline-block;
-    width: 100%;
-    height: 550px;
+    width: 300px;
+    height: 432px;
     text-align: center;
     cursor: pointer;
     overflow: hidden;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+    border: 0 solid #fff;
     border-radius: 4px;
-    padding: 16px 24px 24px;
+    -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
 }
 
 .explain-download .preview-wrapper iframe {
     display: inline-block;
     position: relative;
     background: #fff;
-    height: 2039px;
+    height: 1120px;
     width: 1440px;
-    -webkit-transform: scale(0.253);
-    transform: scale(0.253);
-    left: 42%;
-    margin-left: -156px;
+    -webkit-transform: scale(0.385);
+    transform: scale(0.385);
+    max-height: 1133px;
+    left: 33%;
+    margin-left: -100px;
     border: none;
     pointer-events: none;
     -webkit-transform-origin: 0 0;
@@ -1671,9 +1681,6 @@ textarea.form-control {
     -webkit-transition: all .6s ease;
     transition: all .6s ease;
     cursor: pointer;
-    border-radius: 10px;
-    -webkit-box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
-    box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
 }
 
 .explain-download__button--correct {

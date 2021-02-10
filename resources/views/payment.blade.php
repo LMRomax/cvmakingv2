@@ -24,7 +24,7 @@
                             <h2>{{__('translations.payment.explain-download__title')}}</h2>
                             <p class="explain-download--intro">{{__('translations.payment.explain-download__previewpdf')}}</p>
                             <div class="preview-wrapper preview-wrapper--w-mb">
-                                <div data-toggle="modal" data-target="#cvModal"> 
+                                <div class="preview--inner" data-toggle="modal" data-target="#cvModal"> 
                                     <iframe src="{{ route('pdf') }}" width="100%" class="template-preview__iframe"
                                         scrolling="no" id="previewCVIframe" data-toggle="modal" data-target="#cvModal">
                                     </iframe>
@@ -65,14 +65,14 @@
 
     <!-- Modal preview CV Big Format -->
     <div class="modal fade cvPreviewFullPage" id="cvModal" tabindex="-1" role="dialog" aria-labelledby="cvModalLabel"
-    aria-hidden="true">
+        aria-hidden="true">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
         <div class="modal-dialog" role="document">
             <div class="preview-wrapper">
-                <div>
-                    <iframe src="{{ route('pdf') }}" width="100%" class="template-preview__iframe"
+                <div class="preview--inner">
+                    <iframe src="{{ route('pdf') }}" class="template-preview__iframe"
                         scrolling="no">
                     </iframe>
                 </div>

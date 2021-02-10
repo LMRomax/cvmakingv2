@@ -134,13 +134,11 @@
             <span aria-hidden="true">&times;</span>
         </button>
         <div class="modal-dialog" role="document">
-            <div class="modal-preview">
-                <div class="preview-wrapper">
-                    <div class="preview--inner">
-                        <iframe src="{{ route('pdf') }}" class="template-preview__iframe"
-                            scrolling="no">
-                        </iframe>
-                    </div>
+            <div class="preview-wrapper">
+                <div class="preview--inner">
+                    <iframe src="{{ route('pdf') }}" class="template-preview__iframe"
+                        scrolling="no">
+                    </iframe>
                 </div>
             </div>
         </div>
