@@ -34,8 +34,9 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
         }
 
         body {
-            width: 210mm;
-            height: 297mm;
+            width:26cm;
+            height:38.35cm;
+            box-sizing:border-box;
             padding: 16px;
             font-size: 14px;
         }

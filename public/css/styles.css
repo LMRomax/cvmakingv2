@@ -1339,11 +1339,10 @@ textarea.form-control {
     display: inline-block;
     position: relative;
     background: #fff;
-    height: 1120px;
+    height: 1400px;
     width: 1440px;
-    -webkit-transform: scale(0.385);
-    transform: scale(0.385);
-    max-height: 1133px;
+    -webkit-transform: scale(0.31);
+    transform: scale(0.31);
     left: 33%;
     margin-left: -100px;
     border: none;
@@ -1650,7 +1649,7 @@ textarea.form-control {
 
 .explain-download .preview--inner {
     display: inline-block;
-    width: 300px;
+    width: 306px;
     height: 432px;
     text-align: center;
     cursor: pointer;
@@ -1667,11 +1666,10 @@ textarea.form-control {
     display: inline-block;
     position: relative;
     background: #fff;
-    height: 1120px;
+    height: 1400px;
     width: 1440px;
-    -webkit-transform: scale(0.385);
-    transform: scale(0.385);
-    max-height: 1133px;
+    -webkit-transform: scale(0.31);
+    transform: scale(0.31);
     left: 33%;
     margin-left: -100px;
     border: none;

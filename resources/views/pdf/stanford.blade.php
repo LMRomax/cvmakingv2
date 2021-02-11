@@ -29,15 +29,26 @@
             margin:0;
             padding:0
         }
+        
+        body {
+            width:26cm;
+            height:38.35cm;
+            font-size: 14px;
+        }
         p {
             margin-bottom: 0;
         }
         .page {
+            height: 100%;
             background: white;
+        }
+        .table .table {
+            background: transparent;
         }
         .table { 
             display: table; 
             width: 100%; 
+            height: 100%;
             border-collapse: collapse; 
             margin-bottom: 0;
         }
@@ -49,14 +60,20 @@
         .table-cell { 
             display: table-cell;
         }
+        .presentation-perso__stanford--cell {
+            width: 33.3333%;
+            height: 100%;
+            vertical-align: top;
+        }
+        .presentation-content__stanford--cell {
+            width: 66.6666%;
+            vertical-align: top;
+        }
         .presentation-perso__stanford {
             background-color: #424954;
-            width: 33.3333%;
-            height: 18000px;
+            height: 100%;
             padding: 24px;
             color: #fff;
-            overflow-x: hidden;
-            overflow-y: hidden;
         }
         .presentation-perso__stanford .avatar {
             width: 75%;
@@ -99,10 +116,10 @@
             margin-bottom: 8px;
         }
         .presentation-perso__stanford .section__wrapper {
-            margin-bottom: 42px;
+            margin-bottom: 48px;
         }
         .presentation-content__stanford .section__wrapper {
-            margin-bottom: 42px;
+            margin-bottom: 24px;
         }
         .td-align-right {
             text-align: right;
@@ -123,7 +140,6 @@
             margin-bottom: 8px;
         }
         .presentation-content__stanford {
-            width: 66.6666%;
             color: #424954;
             padding: 16px 24px;
         }
@@ -134,27 +150,30 @@
             border-bottom: 1px solid #ddd;
         }
         .presentation-content__stanford .description {
-            padding: 16px 0;
+            padding: 16px 0 24px;
         }
         .presentation-content__stanford .bandeau {
-            padding-bottom: 16px;
+            padding-bottom: 8px;
             margin-bottom: 16px;
             border-bottom: 1px solid #ddd;
             font-size: 20px;
             font-weight: 600;
         }
         .formation--title {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-bottom: 4px;
+            display: block;
         }
         .formation--title .formation--title__title {
+            display: inline-block;
+            width: 33%;
             font-weight: 600;
             color: #424954;
+            font-size: 16px;
         }
         .formation--title .formation--title__date {
+            display: inline-block;
+            width: 66%;
             color: #424954;
+            text-align: right;
         }
         .italic-small {
             font-style: italic;
@@ -187,6 +206,9 @@
         .list-comps .label-educ:last-child {
             margin-bottom: 24px;
         }
+        .comp--title {
+            width: 100px;
+        }
     </style>
 </head>
 
@@ -198,7 +220,7 @@
                     <div class="presentation-perso__stanford" style="background-color: {{ $color['primary'] }};">
                         <div class="avatar">
                             @if ($cv->cvphoto !== null)
-                                <img src="{{ asset('cvphoto/'.$cv->cvphoto) }}" alt="Avatar">
+                                <img src="{{ asset('images/anthony.jpg') }}" alt="Avatar">
                             @endif
                         </div>
         
@@ -338,13 +360,15 @@
                                 </div>
                                 <div class="list-hobbies">
                                     <div class="table-data">
-                                        <table>
+                                        <div class="table">
                                             @foreach ($cv_hobbies as $key => $cv_hobby)
-                                                <tr>
-                                                    <td>{{ $cv_hobby->contentcv_hobbies_hobby }}</td>
-                                                </tr>
+                                                <div class="table-row">
+                                                    <div class="table-cell">
+                                                        {{ $cv_hobby->contentcv_hobbies_hobby }}
+                                                    </div>
+                                                </div>
                                             @endforeach
-                                        </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -357,13 +381,13 @@
                                 </div>
                                 <div class="list-langs">
                                     <div class="table-data">
-                                        <table>
+                                        <div class="table">
                                             @foreach ($cv_langs as $key => $cv_lang)
-                                                <tr>
-                                                    <td class="td-align-right td-strong">
+                                                <div class="table-row">
+                                                    <div class="table-cell td-align-right td-strong">
                                                         {{ $cv_lang->contentcv_lang_name }}
-                                                    </td>
-                                                    <td class="data">
+                                                    </div>
+                                                    <div class="table-cell data">
                                                         @if ($cv_lang->contentcv_lang_level == '100')
                                                             {{ __('translations.contentcv.maternal_lang') }}
                                                         @elseif($cv_lang->contentcv_lang_level == "75")
@@ -375,10 +399,10 @@
                                                         @elseif($cv_lang->contentcv_lang_level == "15")
                                                             {{ __('translations.contentcv.elementary_lang') }}
                                                         @endif
-                                                    </td>
-                                                </tr>
+                                                    </div>
+                                                </div>
                                             @endforeach
-                                        </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -386,21 +410,23 @@
 
                         @if ($cv_refs != null)
                             <section class="refs section__wrapper">
-                                <div class="bandeau" style="color: {{ $color['primary'] }};">
+                                <div class="bandeau">
                                     {{ __('translations.pdf.bandeau.refs') }}
                                 </div>
                                 <div class="list-refs">
                                     <div class="table-data">
-                                        <table>
+                                        <div class="table">
                                             @foreach ($cv_refs as $key => $cv_ref)
-                                                <tr>
-                                                    <td class="data__title">{{ $cv_ref->contentcv_ref_name }}</td>
-                                                    <td class="data">
+                                                <div class="table-row">
+                                                    <div class="table-cell td-align-right td-strong">
+                                                        {{ $cv_ref->contentcv_ref_name }}
+                                                    </div>
+                                                    <div class="table-cell data">
                                                         {{ $cv_ref->contentcv_ref_contact }}
-                                                    </td>
-                                                </tr>
+                                                    </div>
+                                                </div>
                                             @endforeach
-                                        </table>
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -425,15 +451,15 @@
                                     </div>
                                     <div class="lists-formations">
                                         <div class="table-data table-data-content">
-                                            <table>
+                                            <div class="table">
                                                 @foreach ($cv_educs as $key => $cv_educ)
-                                                    <tr>
-                                                        <td class="label-educ">
+                                                    <div>
+                                                        <div class="label-educ">
                                                             <div class="formation--title">
-                                                                <div class="formation--title__title">
+                                                                <span class="formation--title__title">
                                                                     {{ $cv_educ->contentcv_educ_formation }}
-                                                                </div>
-                                                                <div class="formation--title__date">
+                                                                </span>
+                                                                <span class="formation--title__date">
                                                                     @if ($cv_educ->educ_start_month == '01')
                                                                         {{ __('translations.contentcv.jan') }}
                                                                     @elseif($cv_educ->educ_start_month == "02")
@@ -487,7 +513,7 @@
                                                                         {{ __('translations.contentcv.dec') }}
                                                                     @endif
                                                                     {{ $cv_educ->educ_end_year }}
-                                                                </div>
+                                                                </span>
                                                             </div>
                                                             <p class="italic-small">
                                                                 {{ $cv_educ->contentcv_educ_city }} -
@@ -496,10 +522,10 @@
                                                             <div class="educ-description">
                                                                 {!! nl2br($cv_educ->contentcv_educ_description) !!}
                                                             </div>
-                                                        </td>
-                                                    </tr>
+                                                        </div>
+                                                    </div>
                                                 @endforeach
-                                            </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </section>
@@ -514,15 +540,15 @@
                                     </div>
                                     <div class="lists-xps">
                                         <div class="table-data">
-                                            <table>
+                                            <div class="table">
                                                 @foreach ($cv_xps as $key => $cv_xp)
-                                                    <tr>
-                                                        <td class="label-educ">
+                                                    <div>
+                                                        <div class="label-educ">
                                                             <div class="formation--title">
-                                                                <div class="formation--title__title">
+                                                                <span class="formation--title__title">
                                                                     {{ $cv_xp->contentcv_xp_poste }}
-                                                                </div>
-                                                                <div class="formation--title__date">
+                                                                </span>
+                                                                <span class="formation--title__date">
                                                                     @if ($cv_xp->xp_start_month == '01')
                                                                         {{ __('translations.contentcv.jan') }}
                                                                     @elseif($cv_xp->xp_start_month == "02")
@@ -576,19 +602,19 @@
                                                                         {{ __('translations.contentcv.dec') }}
                                                                     @endif
                                                                     {{ $cv_xp->xp_end_year }}
-                                                                </div>
+                                                                </span>
                                                             </div>
-                                                                <p class="italic-small">
-                                                                    {{ $cv_xp->contentcv_xp_employer }},
-                                                                    {{ $cv_xp->contentcv_xp_city }}
-                                                                </p>
-                                                                <div class="educ-description"> {!!
-                                                                    nl2br($cv_xp->contentcv_xp_description) !!}</div>
+                                                            <p class="italic-small">
+                                                                {{ $cv_xp->contentcv_xp_employer }},
+                                                                {{ $cv_xp->contentcv_xp_city }}
+                                                            </p>
+                                                            <div class="educ-description"> 
+                                                                {!! nl2br($cv_xp->contentcv_xp_description) !!}
                                                             </div>
-                                                        </td>
-                                                    </tr>
+                                                        </div>
+                                                    </div>
                                                 @endforeach
-                                            </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </section>
@@ -603,11 +629,11 @@
                                     </div>
                                     <div class="list-comps">
                                         <div class="table-data">
-                                            <table>
+                                            <div class="table">
                                                 @foreach ($cv_comps as $key => $cv_comp)
-                                                    <tr class="label-educ">
-                                                        <td class="data__title">{{ $cv_comp->contentcv_comp_name }}</td>
-                                                        <td class="data progress__bar">
+                                                    <div class="table-row label-educ">
+                                                        <div class="table-cell data__title comp--title">{{ $cv_comp->contentcv_comp_name }}</div>
+                                                        <div class="table-cell data progress__bar">
                                                             <div class="my__progress">
                                                                 <div class="my__bar"
                                                                 @if ($cv_comp->contentcv_comp_level == 25)
@@ -621,10 +647,10 @@
                                                                 @endif
                                                                 ></div>
                                                             </div>
-                                                        </td>
-                                                    </tr>
+                                                        </div>
+                                                    </div>
                                                 @endforeach
-                                            </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </section>

@@ -334,9 +334,13 @@ class CVController extends Controller
                 'cv_langs',
                 'cv_refs',
                 'cv_color'
-            ));
+            ))
+            ->setOption('margin-bottom', '0mm')
+            ->setOption('margin-top', '0mm')
+            ->setOption('margin-right', '0mm')
+            ->setOption('margin-left', '0mm');
 
-            return $pdf->download($template.'.pdf');
+            return $pdf->stream($template.'.pdf');
         }
         else {
             abort(404);

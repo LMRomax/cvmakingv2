@@ -22,6 +22,18 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" />
     <title>CV</title>
 
+    <style media="print" type="text/css">
+        @page {
+            size: A4;
+        }
+        html, body {
+            width:21cm !important;
+            height:29.7cm !important;
+            font-size: 14px;
+            margin: 0;
+            box-sizing:border-box;
+        }
+    </style>
     <style>
         @import url('https://fonts.googleapis.com/css?family=PT+Sans');
         
@@ -31,8 +43,9 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
         }
 
         body {
-            width: 210mm;
-            height: 297mm;
+            width:26cm;
+            height:38.35cm;
+            box-sizing:border-box;
             padding: 16px;
             font-size: 14px;
         }
@@ -132,7 +145,7 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
         }
 
         .table-cell.formation--name {
-            width: 66.6666%;
+            width: 75%;
         }
 
         .table-cell.formation--name p {
@@ -140,7 +153,7 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
         }
 
         .table-cell.formation--date {
-            width: 33.3333%;
+            width: 25%;
             text-align: right;
         }
 
@@ -189,7 +202,6 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
             display: block;
             margin-bottom: 8px;
         }
-
     </style>
 </head>
 

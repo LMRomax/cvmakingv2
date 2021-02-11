@@ -7,7 +7,7 @@
 $('#form-description__validate').click(function() {
     var form = $('#description-form');
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/description',
@@ -20,10 +20,10 @@ $('#form-description__validate').click(function() {
             $('#description__form-error').css('display', 'none');
             form.children().removeClass('is-invalid');
             $('#description__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             console.log(resultat);
@@ -49,7 +49,7 @@ $(document).on('click','#form-xp__validate',function(e) {
     var form = $('#xp-form');
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/xp/store',
@@ -64,10 +64,10 @@ $(document).on('click','#form-xp__validate',function(e) {
             $('#form-xp__todisplay').css('display', 'none');
             $('#form-xp__display').css('display', 'block');
             $('#xp__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
             //$.getScript("public/js/contentCvSummernote.js");
         },
         error : function(resultat, statut, erreur){
@@ -90,7 +90,7 @@ $(document).on('click','#form-xpedit__validate',function(e) {
     var xp_id = $(this).attr("data-submit-editform");
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     var form = $('#form-xp__toedit' + xp_id);
     $.ajax({
         url: '/validate/cv/xp/'+xp_id+'/update',
@@ -106,10 +106,10 @@ $(document).on('click','#form-xpedit__validate',function(e) {
             $('#form-xp__todisplay').css('display', 'none');
             $('#form-xp__display').css('display', 'block');
             $('#xp__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
             //$('#xp' +xp_id).children('.xps-title-date').children('div').text(data.Title['contentcv_xp_poste']);
         },
         error : function(resultat, statut, erreur){
@@ -132,7 +132,7 @@ $(document).on('click','#form-xpedit__validate',function(e) {
 $(document).on('click','#form-xp__delete',function(e) {
     var xp_id = $(this).attr("data-xpdelete");
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     e.preventDefault();
     /* Call Ajax */
     $.ajax({
@@ -145,10 +145,10 @@ $(document).on('click','#form-xp__delete',function(e) {
         success : function(data) {
             $('#xp'+xp_id).slideUp();
             $('#xp__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             if(erreur === "Internal Servor Error") {
@@ -171,7 +171,7 @@ $(document).on('click','#form-educ__validate',function(e) {
     var form = $('#educ-form');
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/educ/store',
@@ -186,10 +186,10 @@ $(document).on('click','#form-educ__validate',function(e) {
             $('#form-educ__todisplay').css('display', 'none');
             $('#form-educ__display').css('display', 'block');
             $('#educ__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             $.each(resultat.responseJSON.errors, function (field ,error) {
@@ -211,7 +211,7 @@ $(document).on('click','#form-educedit__validate',function(e) {
     var educ_id = $(this).attr("data-submit-educedit");
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     var form = $('#form-educ__toedit' + educ_id);
     $.ajax({
         url: '/validate/cv/educ/'+educ_id+'/update',
@@ -227,10 +227,10 @@ $(document).on('click','#form-educedit__validate',function(e) {
             $('#form-educ__todisplay').css('display', 'none');
             $('#form-educ__display').css('display', 'block');
             $('#educ__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
             //$('#educ' + educ_id).children('.xps-title-date').children('div').text(data.Title['contentcv_educ_formation']);
         },
         error : function(resultat, statut, erreur){
@@ -253,7 +253,7 @@ $(document).on('click','#form-educ__delete',function(e) {
     var educ_id = $(this).attr("data-educdelete");
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/educ/'+educ_id+'/delete',
@@ -265,10 +265,10 @@ $(document).on('click','#form-educ__delete',function(e) {
         success : function(data) {
             $('#educ'+educ_id).slideUp();
             $('#educ__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             if(erreur === "Internal Servor Error") {
@@ -291,7 +291,7 @@ $(document).on('click','#form-comp__validate',function(e) {
     var form = $('#comp-form');
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/comp/store',
@@ -306,10 +306,10 @@ $(document).on('click','#form-comp__validate',function(e) {
             $('#form-comp__todisplay').css('display', 'none');
             $('#form-comp__display').css('display', 'block');
             $('#comp__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             $.each(resultat.responseJSON.errors, function (field ,error) {
@@ -331,7 +331,7 @@ $(document).on('click','#form-compedit__validate',function(e) {
     var comp_id = $(this).attr("data-submit-compedit");
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     var form = $('#form-comp__toedit' + comp_id);
     $.ajax({
         url: '/validate/cv/comp/'+comp_id+'/update',
@@ -346,10 +346,10 @@ $(document).on('click','#form-compedit__validate',function(e) {
             $('#form-comp__todisplay').css('display', 'none');
             $('#form-comp__display').css('display', 'block');
             $('#comp__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             $.each(resultat.responseJSON.errors, function (field ,error) {
@@ -371,7 +371,7 @@ $(document).on('click','#form-comp__delete',function(e) {
     var comp_id = $(this).attr("data-compdelete");
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/comp/'+comp_id+'/delete',
@@ -383,10 +383,10 @@ $(document).on('click','#form-comp__delete',function(e) {
         success : function(data) {
             $('#comp'+comp_id).slideUp();
             $('#comp__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             if(erreur === "Internal Servor Error") {
@@ -409,7 +409,7 @@ $(document).on('click','#form-hobbies__validate',function(e) {
     var form = $('#hobbies-form');
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/hobbies/store',
@@ -424,10 +424,10 @@ $(document).on('click','#form-hobbies__validate',function(e) {
             $('#form-hobbies__todisplay').css('display', 'none');
             $('#form-hobbies__display').css('display', 'block');
             $('#hobbies__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             $.each(resultat.responseJSON.errors, function (field ,error) {
@@ -449,7 +449,7 @@ $(document).on('click','#form-hobbieedit__validate',function(e) {
     var hobbie_id = $(this).attr("data-submit-hobbieedit");
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     var form = $('#form-hobbie__toedit' + hobbie_id);
     $.ajax({
         url: '/validate/cv/hobbies/'+hobbie_id+'/update',
@@ -464,10 +464,10 @@ $(document).on('click','#form-hobbieedit__validate',function(e) {
             $('#form-hobbies__todisplay').css('display', 'none');
             $('#form-hobbies__display').css('display', 'block');
             $('#hobbies__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             $.each(resultat.responseJSON.errors, function (field ,error) {
@@ -490,7 +490,7 @@ $(document).on('click','#form-hobbie__delete',function(e) {
     console.log(hobbie_id);
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/hobbies/'+hobbie_id+'/delete',
@@ -502,10 +502,10 @@ $(document).on('click','#form-hobbie__delete',function(e) {
         success : function(data) {
             $('#hobbie'+hobbie_id).slideUp();
             $('#hobbies__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             if(erreur === "Internal Servor Error") {
@@ -528,7 +528,7 @@ $(document).on('click','#form-langs__validate',function(e) {
     var form = $('#langs-form');
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/langs/store',
@@ -543,10 +543,10 @@ $(document).on('click','#form-langs__validate',function(e) {
             $('#form-langs__todisplay').css('display', 'none');
             $('#form-langs__display').css('display', 'block');
             $('#langs__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             $.each(resultat.responseJSON.errors, function (field ,error) {
@@ -568,7 +568,7 @@ $(document).on('click','#form-langedit__validate',function(e) {
     var lang_id = $(this).attr("data-submit-langedit");
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     var form = $('#form-lang__toedit' + lang_id);
     $.ajax({
         url: '/validate/cv/langs/'+lang_id+'/update',
@@ -583,10 +583,10 @@ $(document).on('click','#form-langedit__validate',function(e) {
             $('#form-langs__todisplay').css('display', 'none');
             $('#form-langs__display').css('display', 'block');
             $('#langs__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             $.each(resultat.responseJSON.errors, function (field ,error) {
@@ -608,7 +608,7 @@ $(document).on('click','#form-lang__delete',function(e) {
     var lang_id = $(this).attr("data-langdelete");
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/langs/'+lang_id+'/delete',
@@ -620,10 +620,10 @@ $(document).on('click','#form-lang__delete',function(e) {
         success : function(data) {
             $('#lang'+lang_id).slideUp();
             $('#langs__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             if(erreur === "Internal Servor Error") {
@@ -646,7 +646,7 @@ $(document).on('click','#form-refs__validate',function(e) {
     var form = $('#refs-form');
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/refs/store',
@@ -661,10 +661,10 @@ $(document).on('click','#form-refs__validate',function(e) {
             $('#form-refs__todisplay').css('display', 'none');
             $('#form-refs__display').css('display', 'block');
             $('#refs__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             $.each(resultat.responseJSON.errors, function (field ,error) {
@@ -686,7 +686,7 @@ $(document).on('click','#form-refedit__validate',function(e) {
     var ref_id = $(this).attr("data-submit-refedit");
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     var form = $('#form-ref__toedit' + ref_id);
     $.ajax({
         url: '/validate/cv/refs/'+ref_id+'/update',
@@ -701,10 +701,10 @@ $(document).on('click','#form-refedit__validate',function(e) {
             $('#form-refs__todisplay').css('display', 'none');
             $('#form-refs__display').css('display', 'block');
             $('#refs__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             $.each(resultat.responseJSON.errors, function (field ,error) {
@@ -726,7 +726,7 @@ $(document).on('click','#form-ref__delete',function(e) {
     var ref_id = $(this).attr("data-refdelete");
     e.preventDefault();
     $('.iframe-isload').css('display', 'flex');
-    $('#previewCVIframe').css('display', 'none');
+    $('.preview--inner').css('display', 'none');
     /* Call Ajax */
     $.ajax({
         url: '/validate/cv/refs/'+ref_id+'/delete',
@@ -738,10 +738,10 @@ $(document).on('click','#form-ref__delete',function(e) {
         success : function(data) {
             $('#ref'+ref_id).slideUp();
             $('#refs__form-error').css('display', 'none');
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             if(erreur === "Internal Servor Error") {
@@ -769,10 +769,10 @@ $(document).on('click', '.color-btn', function(e) {
             "color": color
         },
         success : function(data) {
-            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
+            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
-            $('#previewCVIframe').css('display', 'block');
+            $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
             if(erreur === "Internal Servor Error") {
