@@ -30,10 +30,16 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
             padding:0
         }
 
+        body {
+            width: 210mm;
+            height: 297mm;
+            padding: 16px;
+            font-size: 14px;
+        }
+
         .page {
             width: 100%;
             background: white;
-            padding: 48px 72px;
         }
 
         .table { 
