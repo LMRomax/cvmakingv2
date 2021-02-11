@@ -40,6 +40,10 @@
             font-size: 14px;
         }
 
+        .table th, .table td {
+            border: none;
+        }
+
         .page {
             background: white;
         }
@@ -105,17 +109,20 @@
         }
 
         .main__content {
-            width: 66.6666%;
             background: #fff;
             height: 100%;
             padding: 24px;
         }
 
         .secondary__content {
-            width: 33.3333%;
             background: #e9e9e9;
             height: 100%;
             padding: 24px;
+        }
+
+        .secondary__content--cell {
+            width: 30%;
+            vertical-align: middle;
         }
 
         .secondary__content .bandeau {
@@ -199,6 +206,8 @@
         }
 
         .main__content .label-educ .little--square{
+            display: inline-block;
+            vertical-align: middle;
             width:16px;
             height:16px;
             background:#424954;
@@ -207,29 +216,30 @@
 
         .main__content .formation--title {
             width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
         }
 
-        .main__content .wsquare--main-content {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+        .main__content .formation--title__title {
+            display: inline-block;
+            vertical-align: middle;
+            width: 35%;
         }
 
         .main__content .formation--title__date {
+            display: inline-block;
+            vertical-align: middle;
             font-size: 14px;
+            width: 56%;
+            text-align: right;
         }
 
         .main__content .italic-small {
-            padding-left: 40px;
+            padding-left: 44px;
             font-weight: 600;
             font-style: italic;
         }
 
         .main__content .educ-description {
-            padding-left: 40px;
+            padding-left: 44px;
             text-align: justify;
         }
 
@@ -292,70 +302,66 @@
                                                 <tr>
                                                     <td class="label-educ">
                                                         <div class="wsquare--main-content">
-                                                            <div class="little--square" style="background: {{ $color['primary'] }};"></div>
-        
-                                                            <div class="formation--title">
-                                                                <div class="formation--title__title">
-                                                                    {{ $cv_xp->contentcv_xp_poste }}
-                                                                </div>
-                                                                <div class="formation--title__date">
-                                                                    @if ($cv_xp->xp_start_month == '01')
-                                                                        {{ __('translations.contentcv.jan') }}
-                                                                    @elseif($cv_xp->xp_start_month == "02")
-                                                                        {{ __('translations.contentcv.feb') }}
-                                                                    @elseif($cv_xp->xp_start_month == "03")
-                                                                        {{ __('translations.contentcv.mar') }}
-                                                                    @elseif($cv_xp->xp_start_month == "04")
-                                                                        {{ __('translations.contentcv.avr') }}
-                                                                    @elseif($cv_xp->xp_start_month == "05")
-                                                                        {{ __('translations.contentcv.mai') }}
-                                                                    @elseif($cv_xp->xp_start_month == "06")
-                                                                        {{ __('translations.contentcv.juin') }}
-                                                                    @elseif($cv_xp->xp_start_month == "07")
-                                                                        {{ __('translations.contentcv.jui') }}
-                                                                    @elseif($cv_xp->xp_start_month == "08")
-                                                                        {{ __('translations.contentcv.aout') }}
-                                                                    @elseif($cv_xp->xp_start_month == "09")
-                                                                        {{ __('translations.contentcv.sept') }}
-                                                                    @elseif($cv_xp->xp_start_month == "10")
-                                                                        {{ __('translations.contentcv.oct') }}
-                                                                    @elseif($cv_xp->xp_start_month == "11")
-                                                                        {{ __('translations.contentcv.nov') }}
-                                                                    @elseif($cv_xp->xp_start_month == "12")
-                                                                        {{ __('translations.contentcv.dec') }}
-                                                                    @endif
-                                                                    {{ $cv_xp->xp_start_year }}
-                                                                    -
-                                                                    @if ($cv_xp->xp_end_month == '01')
-                                                                        {{ __('translations.contentcv.jan') }}
-                                                                    @elseif($cv_xp->xp_end_month == "02")
-                                                                        {{ __('translations.contentcv.feb') }}
-                                                                    @elseif($cv_xp->xp_end_month == "03")
-                                                                        {{ __('translations.contentcv.mar') }}
-                                                                    @elseif($cv_xp->xp_end_month == "04")
-                                                                        {{ __('translations.contentcv.avr') }}
-                                                                    @elseif($cv_xp->xp_end_month == "05")
-                                                                        {{ __('translations.contentcv.mai') }}
-                                                                    @elseif($cv_xp->xp_end_month == "06")
-                                                                        {{ __('translations.contentcv.juin') }}
-                                                                    @elseif($cv_xp->xp_end_month == "07")
-                                                                        {{ __('translations.contentcv.jui') }}
-                                                                    @elseif($cv_xp->xp_end_month == "08")
-                                                                        {{ __('translations.contentcv.aout') }}
-                                                                    @elseif($cv_xp->xp_end_month == "09")
-                                                                        {{ __('translations.contentcv.sept') }}
-                                                                    @elseif($cv_xp->xp_end_month == "10")
-                                                                        {{ __('translations.contentcv.oct') }}
-                                                                    @elseif($cv_xp->xp_end_month == "11")
-                                                                        {{ __('translations.contentcv.nov') }}
-                                                                    @elseif($cv_xp->xp_end_month == "12")
-                                                                        {{ __('translations.contentcv.dec') }}
-                                                                    @endif
-                                                                    {{ $cv_xp->xp_end_year }}
-                                                                </div>
-                                                            </div>
+                                                            <span class="little--square" style="background: {{ $color['primary'] }};"></span>
+                                                            <span class="formation--title__title">
+                                                                {{ $cv_xp->contentcv_xp_poste }}
+                                                            </span>
+                                                            <span class="formation--title__date">
+                                                                @if ($cv_xp->xp_start_month == '01')
+                                                                    {{ __('translations.contentcv.jan') }}
+                                                                @elseif($cv_xp->xp_start_month == "02")
+                                                                    {{ __('translations.contentcv.feb') }}
+                                                                @elseif($cv_xp->xp_start_month == "03")
+                                                                    {{ __('translations.contentcv.mar') }}
+                                                                @elseif($cv_xp->xp_start_month == "04")
+                                                                    {{ __('translations.contentcv.avr') }}
+                                                                @elseif($cv_xp->xp_start_month == "05")
+                                                                    {{ __('translations.contentcv.mai') }}
+                                                                @elseif($cv_xp->xp_start_month == "06")
+                                                                    {{ __('translations.contentcv.juin') }}
+                                                                @elseif($cv_xp->xp_start_month == "07")
+                                                                    {{ __('translations.contentcv.jui') }}
+                                                                @elseif($cv_xp->xp_start_month == "08")
+                                                                    {{ __('translations.contentcv.aout') }}
+                                                                @elseif($cv_xp->xp_start_month == "09")
+                                                                    {{ __('translations.contentcv.sept') }}
+                                                                @elseif($cv_xp->xp_start_month == "10")
+                                                                    {{ __('translations.contentcv.oct') }}
+                                                                @elseif($cv_xp->xp_start_month == "11")
+                                                                    {{ __('translations.contentcv.nov') }}
+                                                                @elseif($cv_xp->xp_start_month == "12")
+                                                                    {{ __('translations.contentcv.dec') }}
+                                                                @endif
+                                                                {{ $cv_xp->xp_start_year }}
+                                                                -
+                                                                @if ($cv_xp->xp_end_month == '01')
+                                                                    {{ __('translations.contentcv.jan') }}
+                                                                @elseif($cv_xp->xp_end_month == "02")
+                                                                    {{ __('translations.contentcv.feb') }}
+                                                                @elseif($cv_xp->xp_end_month == "03")
+                                                                    {{ __('translations.contentcv.mar') }}
+                                                                @elseif($cv_xp->xp_end_month == "04")
+                                                                    {{ __('translations.contentcv.avr') }}
+                                                                @elseif($cv_xp->xp_end_month == "05")
+                                                                    {{ __('translations.contentcv.mai') }}
+                                                                @elseif($cv_xp->xp_end_month == "06")
+                                                                    {{ __('translations.contentcv.juin') }}
+                                                                @elseif($cv_xp->xp_end_month == "07")
+                                                                    {{ __('translations.contentcv.jui') }}
+                                                                @elseif($cv_xp->xp_end_month == "08")
+                                                                    {{ __('translations.contentcv.aout') }}
+                                                                @elseif($cv_xp->xp_end_month == "09")
+                                                                    {{ __('translations.contentcv.sept') }}
+                                                                @elseif($cv_xp->xp_end_month == "10")
+                                                                    {{ __('translations.contentcv.oct') }}
+                                                                @elseif($cv_xp->xp_end_month == "11")
+                                                                    {{ __('translations.contentcv.nov') }}
+                                                                @elseif($cv_xp->xp_end_month == "12")
+                                                                    {{ __('translations.contentcv.dec') }}
+                                                                @endif
+                                                                {{ $cv_xp->xp_end_year }}
+                                                            </span>
                                                         </div>
-                                                        
                                                         <p class="italic-small">
                                                             {{ $cv_xp->contentcv_xp_employer }},
                                                             {{ $cv_xp->contentcv_xp_city }}
@@ -472,7 +478,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="table-cell">
+                <div class="table-cell secondary__content--cell">
                     <div class="secondary__content">
                         <div class="personal-data section__wrapper">
                             <div class="bandeau" style="background: {{ $color['primary'] }};">
