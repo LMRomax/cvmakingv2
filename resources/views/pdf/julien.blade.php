@@ -35,13 +35,9 @@
         }
 
         body {
-            width:26cm;
+            width:26.25cm;
             height:38.35cm;
             font-size: 14px;
-        }
-
-        .table th, .table td {
-            border: none;
         }
 
         .page {
@@ -57,8 +53,7 @@
             display: table; 
             width: 100%; 
             height: 100%;
-            border-collapse: collapse; 
-            margin-bottom: 0;
+            border-collapse: unset; 
         }
 
         .table-row { 
@@ -67,9 +62,11 @@
 
         .table-cell { 
             display: table-cell;
+            vertical-align: top;
         }
 
         .top {
+            width: 100%;
             background: #424954;
             height: 200px;
             overflow: hidden;
@@ -101,12 +98,18 @@
             padding: 16px 24px;
             border-radius: 6px;
             text-align: justify;
+            vertical-align: middle;
         }
 
         .content {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
+        }
+
+        .main__content--cell {
+            width: 70%;
+            height: 100%;
         }
 
         .main__content {
@@ -121,10 +124,13 @@
             padding: 24px;
         }
 
+        .secondary__content td {
+            padding-left: 0 !important;
+        }
+
         .secondary__content--cell {
             width: 30%;
             height: 100%;
-            vertical-align: middle;
         }
 
         .secondary__content .bandeau {
@@ -133,11 +139,11 @@
             font-weight: 600;
             padding: 8px 16px;
             border-radius: 2px;
-            margin-bottom: 16px;
+            margin-bottom: 32px;
         }
 
         .lists-infos-perso {
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
 
         .lists-infos-perso .infos-perso__card p:first-child {
@@ -149,21 +155,22 @@
         }
 
         .secondary__content .section__wrapper {
-            margin-bottom: 32px;
+            margin-bottom: 16px;
         }
 
         .secondary__content .comp .data__title {
             display: block;
             font-weight: 600;
-            margin-right: 24px;
-            width: 72px;
         }
 
         .secondary__content .td-strong {
             display: block;
             font-weight: 600;
-            margin-right: 24px;
-            width: 72px;
+            padding-bottom: 16px;
+        }
+
+        .secondary__content .table-cell.data {
+            padding-bottom: 16px;
         }
 
         .my__progress {
@@ -181,6 +188,7 @@
 
         .data.progress__bar {
             width: 200px;
+            vertical-align: middle;
         }
 
         .main__content .bandeau {
@@ -194,7 +202,6 @@
             width:32px;
             height:32px;
             background:#424954;
-            margin-right: 24px;
         }
         
         .main__content table tr {
@@ -205,6 +212,11 @@
 
         .main__content table tr:last-child {
             margin-bottom: 0;
+        }
+
+        .table-cell.label-educ {
+            padding-bottom: 24px;
+            padding-left: 32px;
         }
 
         .main__content .label-educ .little--square{
@@ -246,11 +258,29 @@
         }
 
         .main__content .section__wrapper {
-            margin-bottom: 48px;
+            margin-bottom: 30px;
         }
 
         .main__content table tr.no-padding {
             padding-left: 0;
+        }
+
+        .hobbie--td--first {
+            padding-top: 12px !important;
+            padding-bottom: 4px !important;
+        }
+
+        .hobbie--td {
+            padding-bottom: 4px !important;
+            padding-top: 0px !important;
+        }
+
+        .table-cell.big--square--cell {
+            width: 56px;
+        }
+
+        .list-comps .table-row.label-educ .table-cell {
+            padding-bottom: 16px;
         }
     </style>
 </head>
@@ -260,49 +290,49 @@
         <div class="top" style="background: {{ $color['primary'] }}">
             <div class="container-fluid top--wrapper">
                 <div class="avatar">
-                    <table>
-                        <tr>
-                            <td>
+                    <div class="table">
+                        <div class="table-row">
+                            <div class="table-cell">
                                 @if ($cv->cvphoto !== null)
                                     <img src="{{ asset('cvphoto/'.$cv->cvphoto) }}" alt="Avatar">
                                 @endif 
                                 <div class="name">
                                     {{ $cv_basics->makingcv_name }}
                                 </div> 
-                            </td>
-                            <td class="description">
+                            </div>
+                            <div class="table-cell description">
                                 {{ $cv->description }}
-                            </td>
-                        </tr>
-                    </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="table">
             <div class="table-row">
-                <div class="table-cell">
+                <div class="table-cell main__content--cell">
                     <div class="main__content">
                         @if ($cv_xps != null)
                             <section class="xp section__wrapper">
                                 <div class="bandeau">
-                                    <table>
-                                        <tr class="no-padding">
-                                            <td>
+                                    <div class="table">
+                                        <div class="table-row">
+                                            <div class="table-cell big--square--cell">
                                                 <div class="big--square" style="background: {{ $color['primary'] }};"></div>
-                                            </td>
-                                            <td>
+                                            </div>
+                                            <div class="table-cell">
                                                 {{ __('translations.pdf.bandeau.xp') }}
-                                            </td>
-                                        </tr>
-                                    </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="lists-xps">
                                     <div class="table-data">
-                                        <table>
+                                        <div class="table">
                                             @foreach ($cv_xps as $key => $cv_xp)
-                                                <tr>
-                                                    <td class="label-educ">
+                                                <div class="table-row">
+                                                    <div class="table-cell label-educ">
                                                         <div class="wsquare--main-content">
                                                             <span class="little--square" style="background: {{ $color['primary'] }};"></span>
                                                             <span class="formation--title__title">
@@ -371,10 +401,10 @@
                                                         <div class="educ-description"> {!!
                                                             nl2br($cv_xp->contentcv_xp_description) !!}
                                                         </div>
-                                                    </td>
-                                                </tr>
+                                                    </div>
+                                                </div>
                                             @endforeach
-                                        </table>
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -383,85 +413,83 @@
                         @if ($cv_educs != null)
                             <section class="formations section__wrapper">
                                 <div class="bandeau">
-                                    <table>
-                                        <tr class="no-padding">
-                                            <td>
+                                    <div class="table">
+                                        <div class="table-row">
+                                            <div class="table-cell big--square--cell">
                                                 <div class="big--square" style="background: {{ $color['primary'] }};"></div>
-                                            </td>
-                                            <td>
+                                            </div>
+                                            <div class="table-cell">
                                                 {{ __('translations.pdf.bandeau.formation') }}
-                                            </td>
-                                        </tr>
-                                    </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="lists-formations">
-                                    <div class="table-data table-data-content">
-                                        <table>
+                                    <div class="table-data">
+                                        <div class="table">
                                             @foreach ($cv_educs as $key => $cv_educ)
-                                                <tr>
-                                                    <td class="label-educ">
+                                                <div class="table-row">
+                                                    <div class="table-cell label-educ">
                                                         <div class="wsquare--main-content">
-                                                            <div class="little--square" style="background: {{ $color['primary'] }};"></div>
-                                                            <div class="formation--title">
-                                                                <div class="formation--title__title">
-                                                                    {{ $cv_educ->contentcv_educ_formation }}
-                                                                </div>
-                                                                <div class="formation--title__date">
-                                                                    @if ($cv_educ->educ_start_month == '01')
-                                                                        {{ __('translations.contentcv.jan') }}
-                                                                    @elseif($cv_educ->educ_start_month == "02")
-                                                                        {{ __('translations.contentcv.feb') }}
-                                                                    @elseif($cv_educ->educ_start_month == "03")
-                                                                        {{ __('translations.contentcv.mar') }}
-                                                                    @elseif($cv_educ->educ_start_month == "04")
-                                                                        {{ __('translations.contentcv.avr') }}
-                                                                    @elseif($cv_educ->educ_start_month == "05")
-                                                                        {{ __('translations.contentcv.mai') }}
-                                                                    @elseif($cv_educ->educ_start_month == "06")
-                                                                        {{ __('translations.contentcv.juin') }}
-                                                                    @elseif($cv_educ->educ_start_month == "07")
-                                                                        {{ __('translations.contentcv.jui') }}
-                                                                    @elseif($cv_educ->educ_start_month == "08")
-                                                                        {{ __('translations.contentcv.aout') }}
-                                                                    @elseif($cv_educ->educ_start_month == "09")
-                                                                        {{ __('translations.contentcv.sept') }}
-                                                                    @elseif($cv_educ->educ_start_month == "10")
-                                                                        {{ __('translations.contentcv.oct') }}
-                                                                    @elseif($cv_educ->educ_start_month == "11")
-                                                                        {{ __('translations.contentcv.nov') }}
-                                                                    @elseif($cv_educ->educ_start_month == "12")
-                                                                        {{ __('translations.contentcv.dec') }}
-                                                                    @endif
-                                                                    {{ $cv_educ->educ_start_year }}
-                                                                    -
-                                                                    @if ($cv_educ->educ_end_month == '01')
-                                                                        {{ __('translations.contentcv.jan') }}
-                                                                    @elseif($cv_educ->educ_end_month == "02")
-                                                                        {{ __('translations.contentcv.feb') }}
-                                                                    @elseif($cv_educ->educ_end_month == "03")
-                                                                        {{ __('translations.contentcv.mar') }}
-                                                                    @elseif($cv_educ->educ_end_month == "04")
-                                                                        {{ __('translations.contentcv.avr') }}
-                                                                    @elseif($cv_educ->educ_end_month == "05")
-                                                                        {{ __('translations.contentcv.mai') }}
-                                                                    @elseif($cv_educ->educ_end_month == "06")
-                                                                        {{ __('translations.contentcv.juin') }}
-                                                                    @elseif($cv_educ->educ_end_month == "07")
-                                                                        {{ __('translations.contentcv.jui') }}
-                                                                    @elseif($cv_educ->educ_end_month == "08")
-                                                                        {{ __('translations.contentcv.aout') }}
-                                                                    @elseif($cv_educ->educ_end_month == "09")
-                                                                        {{ __('translations.contentcv.sept') }}
-                                                                    @elseif($cv_educ->educ_end_month == "10")
-                                                                        {{ __('translations.contentcv.oct') }}
-                                                                    @elseif($cv_educ->educ_end_month == "11")
-                                                                        {{ __('translations.contentcv.nov') }}
-                                                                    @elseif($cv_educ->educ_end_month == "12")
-                                                                        {{ __('translations.contentcv.dec') }}
-                                                                    @endif
-                                                                    {{ $cv_educ->educ_end_year }}
-                                                                </div>
-                                                            </div>
+                                                            <span class="little--square" style="background: {{ $color['primary'] }};"></span>
+                                                            <span class="formation--title__title">
+                                                                {{ $cv_educ->contentcv_educ_formation }}
+                                                            </span>
+                                                            <span class="formation--title__date">
+                                                                @if ($cv_educ->educ_start_month == '01')
+                                                                    {{ __('translations.contentcv.jan') }}
+                                                                @elseif($cv_educ->educ_start_month == "02")
+                                                                    {{ __('translations.contentcv.feb') }}
+                                                                @elseif($cv_educ->educ_start_month == "03")
+                                                                    {{ __('translations.contentcv.mar') }}
+                                                                @elseif($cv_educ->educ_start_month == "04")
+                                                                    {{ __('translations.contentcv.avr') }}
+                                                                @elseif($cv_educ->educ_start_month == "05")
+                                                                    {{ __('translations.contentcv.mai') }}
+                                                                @elseif($cv_educ->educ_start_month == "06")
+                                                                    {{ __('translations.contentcv.juin') }}
+                                                                @elseif($cv_educ->educ_start_month == "07")
+                                                                    {{ __('translations.contentcv.jui') }}
+                                                                @elseif($cv_educ->educ_start_month == "08")
+                                                                    {{ __('translations.contentcv.aout') }}
+                                                                @elseif($cv_educ->educ_start_month == "09")
+                                                                    {{ __('translations.contentcv.sept') }}
+                                                                @elseif($cv_educ->educ_start_month == "10")
+                                                                    {{ __('translations.contentcv.oct') }}
+                                                                @elseif($cv_educ->educ_start_month == "11")
+                                                                    {{ __('translations.contentcv.nov') }}
+                                                                @elseif($cv_educ->educ_start_month == "12")
+                                                                    {{ __('translations.contentcv.dec') }}
+                                                                @endif
+                                                                {{ $cv_educ->educ_start_year }}
+                                                                -
+                                                                @if ($cv_educ->educ_end_month == '01')
+                                                                    {{ __('translations.contentcv.jan') }}
+                                                                @elseif($cv_educ->educ_end_month == "02")
+                                                                    {{ __('translations.contentcv.feb') }}
+                                                                @elseif($cv_educ->educ_end_month == "03")
+                                                                    {{ __('translations.contentcv.mar') }}
+                                                                @elseif($cv_educ->educ_end_month == "04")
+                                                                    {{ __('translations.contentcv.avr') }}
+                                                                @elseif($cv_educ->educ_end_month == "05")
+                                                                    {{ __('translations.contentcv.mai') }}
+                                                                @elseif($cv_educ->educ_end_month == "06")
+                                                                    {{ __('translations.contentcv.juin') }}
+                                                                @elseif($cv_educ->educ_end_month == "07")
+                                                                    {{ __('translations.contentcv.jui') }}
+                                                                @elseif($cv_educ->educ_end_month == "08")
+                                                                    {{ __('translations.contentcv.aout') }}
+                                                                @elseif($cv_educ->educ_end_month == "09")
+                                                                    {{ __('translations.contentcv.sept') }}
+                                                                @elseif($cv_educ->educ_end_month == "10")
+                                                                    {{ __('translations.contentcv.oct') }}
+                                                                @elseif($cv_educ->educ_end_month == "11")
+                                                                    {{ __('translations.contentcv.nov') }}
+                                                                @elseif($cv_educ->educ_end_month == "12")
+                                                                    {{ __('translations.contentcv.dec') }}
+                                                                @endif
+                                                                {{ $cv_educ->educ_end_year }}
+                                                            </span>
                                                         </div>
                                                         <p class="italic-small">
                                                             {{ $cv_educ->contentcv_educ_city }} -
@@ -470,10 +498,10 @@
                                                         <div class="educ-description">
                                                             {!! nl2br($cv_educ->contentcv_educ_description) !!}
                                                         </div>
-                                                    </td>
-                                                </tr>
+                                                    </div>
+                                                </div>
                                             @endforeach
-                                        </table>
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -618,11 +646,11 @@
                                 </div>
                                 <div class="list-comps">
                                     <div class="table-data">
-                                        <table>
+                                        <div class="table">
                                             @foreach ($cv_comps as $key => $cv_comp)
-                                                <tr class="label-educ">
-                                                    <td class="data__title">{{ $cv_comp->contentcv_comp_name }}</td>
-                                                    <td class="data progress__bar">
+                                                <div class="table-row label-educ">
+                                                    <div class="table-cell data__title">{{ $cv_comp->contentcv_comp_name }}</div>
+                                                    <div class="table-cell data progress__bar">
                                                         <div class="my__progress">
                                                             <div class="my__bar"
                                                             @if ($cv_comp->contentcv_comp_level == 25)
@@ -636,10 +664,10 @@
                                                             @endif
                                                             ></div>
                                                         </div>
-                                                    </td>
-                                                </tr>
+                                                    </div>
+                                                </div>
                                             @endforeach
-                                        </table>
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -652,13 +680,13 @@
                                 </div>
                                 <div class="list-langs">
                                     <div class="table-data">
-                                        <table>
+                                        <div class="table">
                                             @foreach ($cv_langs as $key => $cv_lang)
-                                                <tr>
-                                                    <td class="td-align-right td-strong">
+                                                <div class="table-row">
+                                                    <div class="table-cell td-align-right td-strong">
                                                         {{ $cv_lang->contentcv_lang_name }}
-                                                    </td>
-                                                    <td class="data">
+                                                    </div>
+                                                    <div class="table-cell data">
                                                         @if ($cv_lang->contentcv_lang_level == '100')
                                                             {{ __('translations.contentcv.maternal_lang') }}
                                                         @elseif($cv_lang->contentcv_lang_level == "75")
@@ -670,29 +698,61 @@
                                                         @elseif($cv_lang->contentcv_lang_level == "15")
                                                             {{ __('translations.contentcv.elementary_lang') }}
                                                         @endif
-                                                    </td>
-                                                </tr>
+                                                    </div>
+                                                </div>
                                             @endforeach
-                                        </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         @endif
+
+                        @if ($cv_refs != null)
+                            <section class="refs section__wrapper">
+                                <div class="bandeau" style="background: {{ $color['primary'] }};">
+                                    {{ __('translations.pdf.bandeau.refs') }}
+                                </div>
+                                <div class="list-refs">
+                                    <div class="table-data">
+                                        <div class="table">
+                                            @foreach ($cv_refs as $key => $cv_ref)
+                                                <div class="table-row">
+                                                    <div class="table-cell td-align-right td-strong">
+                                                        {{ $cv_ref->contentcv_ref_name }}
+                                                    </div>
+                                                    <div class="table-cell data">
+                                                        {{ $cv_ref->contentcv_ref_contact }}
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        @endif
         
                         @if ($cv_hobbies != null)
                             <div class="hobbies section__wrapper">
-                                <div class="bandeau" style="background: {{ $color['primary'] }};">
+                                <div class="bandeau" style="background: {{ $color['primary'] }}; margin-bottom: 16px;">
                                     {{ __('translations.pdf.bandeau.hobbies') }}
                                 </div>
                                 <div class="list-hobbies">
                                     <div class="table-data">
-                                        <table>
+                                        <div class="table">
                                             @foreach ($cv_hobbies as $key => $cv_hobby)
-                                                <tr>
-                                                    <td>{{ $cv_hobby->contentcv_hobbies_hobby }}</td>
-                                                </tr>
+                                                <div class="table-row">
+                                                    @if ($loop->first) 
+                                                        <div class="table-cell">
+                                                            {{ $cv_hobby->contentcv_hobbies_hobby }}
+                                                        </div>
+                                                    @else 
+                                                        <div class="table-cell" >
+                                                            {{ $cv_hobby->contentcv_hobbies_hobby }}
+                                                        </div>
+                                                    @endif
+                                                </div>
                                             @endforeach
-                                        </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
