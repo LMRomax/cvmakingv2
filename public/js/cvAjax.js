@@ -20,7 +20,7 @@ $('#form-description__validate').click(function() {
             $('#description__form-error').css('display', 'none');
             form.children().removeClass('is-invalid');
             $('#description__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -64,7 +64,7 @@ $(document).on('click','#form-xp__validate',function(e) {
             $('#form-xp__todisplay').css('display', 'none');
             $('#form-xp__display').css('display', 'block');
             $('#xp__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -106,7 +106,7 @@ $(document).on('click','#form-xpedit__validate',function(e) {
             $('#form-xp__todisplay').css('display', 'none');
             $('#form-xp__display').css('display', 'block');
             $('#xp__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -145,7 +145,7 @@ $(document).on('click','#form-xp__delete',function(e) {
         success : function(data) {
             $('#xp'+xp_id).slideUp();
             $('#xp__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -186,7 +186,7 @@ $(document).on('click','#form-educ__validate',function(e) {
             $('#form-educ__todisplay').css('display', 'none');
             $('#form-educ__display').css('display', 'block');
             $('#educ__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -227,7 +227,7 @@ $(document).on('click','#form-educedit__validate',function(e) {
             $('#form-educ__todisplay').css('display', 'none');
             $('#form-educ__display').css('display', 'block');
             $('#educ__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -265,7 +265,7 @@ $(document).on('click','#form-educ__delete',function(e) {
         success : function(data) {
             $('#educ'+educ_id).slideUp();
             $('#educ__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -306,7 +306,7 @@ $(document).on('click','#form-comp__validate',function(e) {
             $('#form-comp__todisplay').css('display', 'none');
             $('#form-comp__display').css('display', 'block');
             $('#comp__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -346,7 +346,7 @@ $(document).on('click','#form-compedit__validate',function(e) {
             $('#form-comp__todisplay').css('display', 'none');
             $('#form-comp__display').css('display', 'block');
             $('#comp__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -383,7 +383,7 @@ $(document).on('click','#form-comp__delete',function(e) {
         success : function(data) {
             $('#comp'+comp_id).slideUp();
             $('#comp__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -424,7 +424,7 @@ $(document).on('click','#form-hobbies__validate',function(e) {
             $('#form-hobbies__todisplay').css('display', 'none');
             $('#form-hobbies__display').css('display', 'block');
             $('#hobbies__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -464,7 +464,7 @@ $(document).on('click','#form-hobbieedit__validate',function(e) {
             $('#form-hobbies__todisplay').css('display', 'none');
             $('#form-hobbies__display').css('display', 'block');
             $('#hobbies__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -502,7 +502,7 @@ $(document).on('click','#form-hobbie__delete',function(e) {
         success : function(data) {
             $('#hobbie'+hobbie_id).slideUp();
             $('#hobbies__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -543,7 +543,7 @@ $(document).on('click','#form-langs__validate',function(e) {
             $('#form-langs__todisplay').css('display', 'none');
             $('#form-langs__display').css('display', 'block');
             $('#langs__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -583,7 +583,7 @@ $(document).on('click','#form-langedit__validate',function(e) {
             $('#form-langs__todisplay').css('display', 'none');
             $('#form-langs__display').css('display', 'block');
             $('#langs__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -620,7 +620,7 @@ $(document).on('click','#form-lang__delete',function(e) {
         success : function(data) {
             $('#lang'+lang_id).slideUp();
             $('#langs__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -661,7 +661,7 @@ $(document).on('click','#form-refs__validate',function(e) {
             $('#form-refs__todisplay').css('display', 'none');
             $('#form-refs__display').css('display', 'block');
             $('#refs__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -701,7 +701,7 @@ $(document).on('click','#form-refedit__validate',function(e) {
             $('#form-refs__todisplay').css('display', 'none');
             $('#form-refs__display').css('display', 'block');
             $('#refs__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -738,7 +738,7 @@ $(document).on('click','#form-ref__delete',function(e) {
         success : function(data) {
             $('#ref'+ref_id).slideUp();
             $('#refs__form-error').css('display', 'none');
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');
@@ -769,7 +769,7 @@ $(document).on('click', '.color-btn', function(e) {
             "color": color
         },
         success : function(data) {
-            $('.preview--inner').attr('src', $('.preview--inner').attr('src'));
+            $('#previewCVIframe').attr('src', $('#previewCVIframe').attr('src'));
             $('#previewCVIframeModal').attr('src', $('#previewCVIframeModal').attr('src'));
             $('.iframe-isload').css('display', 'none');
             $('.preview--inner').css('display', 'inline-block');

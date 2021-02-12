@@ -46,6 +46,7 @@
 
         .page {
             background: white;
+            height: 100%;
         }
 
         .table .table {
@@ -122,6 +123,7 @@
 
         .secondary__content--cell {
             width: 30%;
+            height: 100%;
             vertical-align: middle;
         }
 
