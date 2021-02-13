@@ -180,6 +180,7 @@
                 'hobbies' => 'Loisirs',
                 'langs' => 'Langues',
                 'refs' => 'Références',
+                'description' => 'Description',
             ],
             'barkley' => [
                 'personal-data' => 'Données personnelles',
