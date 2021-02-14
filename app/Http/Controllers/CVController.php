@@ -261,7 +261,7 @@ class CVController extends Controller
     {
         $selected_design = session()->get('selectedDesign');
 
-        $template = $selected_design['name'];
+        $template = "birmingham";
 
         $cv_id = session()->get('cv_id');
 
