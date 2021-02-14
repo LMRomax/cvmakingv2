@@ -1683,7 +1683,6 @@ textarea.form-control {
 
 .explain-download__button--correct {
     display: block;
-    width: 250px;
     background: #8BC34A;
     border-radius: 25px;
     color: #fff;
@@ -1691,7 +1690,7 @@ textarea.form-control {
     font-size: 20px;
     margin-top: 20px;
     font-weight: 600;
-    padding: 12px 28px;
+    padding: 8px 24px;
     cursor: pointer;
     text-align: center;
 }
@@ -1702,12 +1701,15 @@ textarea.form-control {
 }
 
 .payment-card {
+    position: sticky;
+    top: 85px;
+}
+
+.module-payment {
     background: #F4F7FC;
     padding: 30px;
     box-shadow: 0px 3px 6px #25155630;
     border-radius: 5px;
-    position: sticky;
-    top: 85px;
 }
 
 .previewcv--todownload {
@@ -1830,6 +1832,16 @@ textarea.form-control {
     font-weight: 400;
     margin-top: 24px;
     margin-bottom: 16px;
+}
+
+.error-cv__correct {
+    font-size: 14px;
+    color: #dc3545;
+    margin-top: 16px;
+    background: #F4F7FC;
+    padding: 30px;
+    box-shadow: 0px 3px 6px #25155630;
+    border-radius: 5px;
 }
 
 /*-- Fin Footer --*/

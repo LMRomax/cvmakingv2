@@ -31,7 +31,7 @@
         }
         
         body {
-            width:26cm;
+            width:26.25cm;
             height:38.35cm;
             font-size: 14px;
         }
@@ -220,8 +220,8 @@
                     <div class="presentation-perso__stanford" style="background-color: {{ $color['primary'] }};">
                         <div class="avatar">
                             @if ($cv->cvphoto !== null)
-                                <img src="{{ asset('images/anthony.jpg') }}" alt="Avatar">
-                            @endif
+                                <img src="{{ asset('cvphoto/'.$cv->cvphoto) }}" alt="Avatar">
+                            @endif 
                         </div>
         
                         <div class="personal-data section__wrapper">

@@ -26,7 +26,8 @@ $('#form-description__validate').click(function() {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
-            console.log(resultat);
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "description__form-error") {
                     $('#description__form-error').css('display', 'block');
@@ -71,6 +72,8 @@ $(document).on('click','#form-xp__validate',function(e) {
             //$.getScript("public/js/contentCvSummernote.js");
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "xp__form-error") {
                     $('#xp__form-error').find('strong').text(error).css('display', 'block');
@@ -113,6 +116,8 @@ $(document).on('click','#form-xpedit__validate',function(e) {
             //$('#xp' +xp_id).children('.xps-title-date').children('div').text(data.Title['contentcv_xp_poste']);
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 console.log(error);
                 if(field === "xp__form-error") {
@@ -151,6 +156,8 @@ $(document).on('click','#form-xp__delete',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             if(erreur === "Internal Servor Error") {
                 $('#xp__form-error').css('display', 'block').find('strong').text(erreur);
             }
@@ -192,6 +199,8 @@ $(document).on('click','#form-educ__validate',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "educ__form-error") {
                     $('#educ__form-error').find('strong').text(error).css('display', 'block');
@@ -234,6 +243,8 @@ $(document).on('click','#form-educedit__validate',function(e) {
             //$('#educ' + educ_id).children('.xps-title-date').children('div').text(data.Title['contentcv_educ_formation']);
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "educ__form-error") {
                     $('#educ__form-error').find('strong').text(error).css('display', 'block');
@@ -271,6 +282,8 @@ $(document).on('click','#form-educ__delete',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             if(erreur === "Internal Servor Error") {
                 $('#educ__form-error').css('display', 'block').find('strong').text(erreur);
             }
@@ -312,6 +325,8 @@ $(document).on('click','#form-comp__validate',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "comp__form-error") {
                     $('#comp__form-error').find('strong').text(error).css('display', 'block');
@@ -352,6 +367,8 @@ $(document).on('click','#form-compedit__validate',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "comp__form-error") {
                     $('#comp__form-error').find('strong').text(error).css('display', 'block');
@@ -389,6 +406,8 @@ $(document).on('click','#form-comp__delete',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             if(erreur === "Internal Servor Error") {
                 $('#comp__form-error').css('display', 'block').find('strong').text(erreur);
             }
@@ -430,6 +449,8 @@ $(document).on('click','#form-hobbies__validate',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "comp__form-error") {
                     $('#hobbies__form-error').find('strong').text(error).css('display', 'block');
@@ -470,6 +491,8 @@ $(document).on('click','#form-hobbieedit__validate',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "hobbies__form-error") {
                     $('#hobbies__form-error').find('strong').text(error).css('display', 'block');
@@ -508,6 +531,8 @@ $(document).on('click','#form-hobbie__delete',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             if(erreur === "Internal Servor Error") {
                 $('#hobbies__form-error').css('display', 'block').find('strong').text(erreur);
             }
@@ -549,6 +574,8 @@ $(document).on('click','#form-langs__validate',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "lang__form-error") {
                     $('#langs__form-error').find('strong').text(error).css('display', 'block');
@@ -589,6 +616,8 @@ $(document).on('click','#form-langedit__validate',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "lang__form-error") {
                     $('#langs__form-error').find('strong').text(error).css('display', 'block');
@@ -626,6 +655,8 @@ $(document).on('click','#form-lang__delete',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             if(erreur === "Internal Servor Error") {
                 $('#langs__form-error').css('display', 'block').find('strong').text(erreur);
             }
@@ -667,6 +698,8 @@ $(document).on('click','#form-refs__validate',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "ref__form-error") {
                     $('#refs__form-error').find('strong').text(error).css('display', 'block');
@@ -707,6 +740,8 @@ $(document).on('click','#form-refedit__validate',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             $.each(resultat.responseJSON.errors, function (field ,error) {
                 if(field === "ref__form-error") {
                     $('#refs__form-error').find('strong').text(error).css('display', 'block');
@@ -744,6 +779,8 @@ $(document).on('click','#form-ref__delete',function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             if(erreur === "Internal Servor Error") {
                 $('#refs__form-error').css('display', 'block').find('strong').text(erreur);
             }
@@ -775,6 +812,8 @@ $(document).on('click', '.color-btn', function(e) {
             $('.preview--inner').css('display', 'inline-block');
         },
         error : function(resultat, statut, erreur){
+            $('.iframe-isload').css('display', 'none');
+            $('.preview--inner').css('display', 'inline-block');
             if(erreur === "Internal Servor Error") {
                 $('#refs__form-error').css('display', 'block').find('strong').text(erreur);
             }

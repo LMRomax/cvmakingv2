@@ -30,31 +30,36 @@
                                     </iframe>
                                 </div>
                             </div>
-                            <p>{{__('translations.payment.explain-download__not-satisfy')}}</p>
-                            <a href="{{ route('content-cv') }}" class="explain-download__button--correct">
-                                {{__('translations.payment.explain-download__not-satisfy-link')}}
-                            </a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="payment-card">
-                            <div class="payment-card__title">
-                                <h2>{{__('translations.payment.stripe_title')}}</h2>
+                            <div class="module-payment">
+                                <div class="payment-card__title">
+                                    <h2>{{__('translations.payment.stripe_title')}}</h2>
+                                </div>
+                                
+                                <div class="payment--card-cb">
+                                    <form action="{{ route('handle-payment') }}" id="payment-form" method="post" 
+                                    enctype="multipart/form-data">
+                                        @csrf
+                                       <!-- Stripe Elements Placeholder -->
+                                       <div id="card-element"></div>
+    
+                                       <div id="card-errors" role="alert"></div>
+               
+                                       <button type="button" id="card-button" class="button-payment">
+                                           {{__('translations.payment.process')}}
+                                       </button>
+                                    </form>
+                                </div>
                             </div>
                             
-                            <div class="payment--card-cb">
-                                <form action="{{ route('handle-payment') }}" id="payment-form" method="post" 
-                                enctype="multipart/form-data">
-                                    @csrf
-                                   <!-- Stripe Elements Placeholder -->
-                                   <div id="card-element"></div>
-
-                                   <div id="card-errors" role="alert"></div>
-           
-                                   <button type="button" id="card-button" class="button-payment">
-                                       {{__('translations.payment.process')}}
-                                   </button>
-                                </form>
+                            <div class="error-cv__correct">
+                                <p>{{__('translations.payment.explain-download__not-satisfy')}}</p>
+                                <a href="{{ route('content-cv') }}" class="explain-download__button--correct">
+                                    {{__('translations.payment.explain-download__not-satisfy-link')}}
+                                </a>
                             </div>
                         </div>
                     </div>

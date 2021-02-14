@@ -1175,7 +1175,7 @@ class CVAjaxController extends Controller
     public function storeRef(Request $request) {
         $validation = Validator::make($request->all(), [
             'contentcv_ref_name' => ['required', 'string'],
-            'contentcv_ref_contact' => ['required', 'email']
+            'contentcv_ref_contact' => ['required', 'string']
         ])->validate();
 
         $cv_id = session()->get('cv_id');
@@ -1241,7 +1241,7 @@ class CVAjaxController extends Controller
     public function updateRef(Request $request, $id) {
         $validation = Validator::make($request->all(), [
             'contentcv_ref_name' => ['required', 'string'],
-            'contentcv_ref_contact' => ['required', 'email']
+            'contentcv_ref_contact' => ['required', 'string']
         ])->validate();
 
         $cv_id = session()->get('cv_id');

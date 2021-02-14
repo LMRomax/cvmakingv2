@@ -94,7 +94,7 @@
             </div>
             <div class="row model-list__wrapper">
                 @foreach ($designs as $design)
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="model-list__card">
                             <div class="model-list__model-title">
                                 {{ $design->name }}
