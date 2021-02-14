@@ -122,6 +122,7 @@
             color: #424954;
             font-size: 20px;
             font-weight: 600;
+            margin-bottom: 24px;
         }
 
         .main-content .bandeau span {
@@ -141,8 +142,25 @@
         }
 
         .main-content .little--point {
+            display: inline-block;
             width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: transparent;
             border: 1px solid #424954;
+        }
+
+        .main-content .table-cell.date--infos {
+            width: 33.3333%;
+        }
+
+        .main-content .line {
+            border-left: 1px solid #424954;
+            width: 1px;
+            height: 100%;
+            position: relative;
+            top: 10px;
+            margin: auto;
         }
     </style>
 </head>
@@ -441,8 +459,9 @@
                                 <div class="table">
                                     @foreach ($cv_xps as $key => $cv_xp)
                                         <div class="table-row">
-                                            <div class="table-cell">
-                                                <span class="little--point" style="background: {{ $color['primary'] }};"></span>
+                                            <div class="line"></div>
+                                            <div class="table-cell date--infos">
+                                                <span class="little--point"></span>
                                                 <span class="formation--title__date">
                                                     @if ($cv_xp->xp_start_month == '01')
                                                         {{ __('translations.contentcv.jan') }}
@@ -499,14 +518,14 @@
                                                     {{ $cv_xp->xp_end_year }}
                                                 </span>
                                             </div>
-                                            <div class="table-cell">
+                                            <div class="table-cell general--infos">
                                                 <span class="formation--title__title">
                                                     {{ $cv_xp->contentcv_xp_poste }}
                                                 </span>
-                                                <p class="italic-small">
+                                                <span class="italic-small">
                                                     {{ $cv_xp->contentcv_xp_employer }},
                                                     {{ $cv_xp->contentcv_xp_city }}
-                                                </p>
+                                                </span>
                                                 <div class="educ-description"> {!!
                                                     nl2br($cv_xp->contentcv_xp_description) !!}
                                                 </div>
