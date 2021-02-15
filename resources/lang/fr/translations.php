@@ -253,7 +253,7 @@
         'footer' => [
             'gocv_title' => 'Vous rencontrez un problème ?',
             'gocv_explain' => 'N\'hésitez pas à nous contacter en cliquant sur le bouton ci-dessous',
-            'gocv_button' => 'Contactez nous',
+            'gocv_button' => 'Contactez-nous',
             'advice-links' => 'Conseils',
             'faq-link' => 'FAQ',
             'contact-link' => 'Contact',
