@@ -1800,7 +1800,7 @@ textarea.form-control {
     font-size: 20px;
     margin-top: 32px;
     font-weight: 600;
-    padding: 12px 28px;
+    padding: 8px 24px;
     cursor: pointer;
     text-align: center;
 }
@@ -1836,7 +1836,7 @@ textarea.form-control {
 
 .error-cv__correct {
     font-size: 14px;
-    color: #dc3545;
+    color: #fd7e14;
     margin-top: 16px;
     background: #F4F7FC;
     padding: 30px;

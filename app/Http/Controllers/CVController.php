@@ -182,6 +182,13 @@ class CVController extends Controller
                 ];
                 session()->put('selectedDesign', $designArray, 86400);
                 break;
+            case 9:
+                $designArray = [
+                    "id" => 9,
+                    "name" => "birmingham",
+                ];
+                session()->put('selectedDesign', $designArray, 86400);
+                break;
         }
 
         return redirect()->to('content-cv');
@@ -261,7 +268,7 @@ class CVController extends Controller
     {
         $selected_design = session()->get('selectedDesign');
 
-        $template = "birmingham";
+        $template = $selected_design['name'];
 
         $cv_id = session()->get('cv_id');
 
