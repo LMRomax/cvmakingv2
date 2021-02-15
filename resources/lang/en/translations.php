@@ -27,9 +27,9 @@
             'title_faq' => 'FAQ',
             'intro_faq' => 'This is where we answer all your questions.',
             'title_user-opinions' => 'Users\' opinions',
-            'first-opinion' => ' I was able to produce a professional CV very quickly and for a small fee.
+            'first-opinion' => 'I was able to produce a professional CV very quickly and for a small fee.
             I like the idea of not having to pay a subscription fee. I simply paid 1€ and got a great CV.',
-            'second-opinion' => ' I have received nothing but positive feedback about my CV! I found a nice job 
+            'second-opinion' => 'I have received nothing but positive feedback about my CV! I found a nice job 
             quite quickly. I will certainly advise your services.',
             'third-opinion' => 'I quickly found the model I liked and the construction was quick. 
             My CV helped me stand out from the competition!',
@@ -49,7 +49,7 @@
             'label_birthdate' => 'Date of birth',
             'label_birthcity' => 'Place of birth',
             'label_drivinglicenses' => 'Driving licence',
-            'label_sexe' => 'Sex',
+            'label_sexe' => 'Gender',
             'label_national' => 'Nationality',
             'label_civilstate' => 'Marital status',
             'label_linkedin' => 'Linkedin',
@@ -163,9 +163,9 @@
         'payment-done' => [
             'title' => 'Your payment was successful',
             'intro' => 'We are pleased that you like mycvmaking',
-            'download__title' => 'Upload your CV!', 
+            'download__title' => 'Download your CV!', 
             'download_subtitle' => 'Click on the button below to download it',
-            'download-cv' => 'Upload my CV',
+            'download-cv' => 'Download my CV',
             
         ],
         'email' => [
@@ -185,7 +185,7 @@
                 'personal-data' => 'Personal data',
                 'name' => 'Name',
                 'address' => 'Address',
-                'tel_number' => 'Phonen number',
+                'tel_number' => 'Phone number',
                 'email' => 'E-mail address',
                 'birthdate' => 'Birthdate',
                 'birthplace' => 'Birthplace',
