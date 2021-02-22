@@ -61,10 +61,10 @@
                                 @if($cv->cvphoto != null)
                                     <img id="cvphoto-preview" src=" {{ asset('cvphoto/'.$cv->cvphoto) }}" alt="CV_photo">
                                 @else 
-                                    <img id="cvphoto-preview" src="{{ asset('images/avatar-placehold.png') }} " alt="CV_photo">
+                                    <img id="cvphoto-preview" src="{{ asset('images/avatar-placehold.webp') }} " alt="CV_photo">
                                 @endif
                             @else
-                                <img id="cvphoto-preview" src="{{ asset('images/avatar-placehold.png') }} " alt="CV_photo">
+                                <img id="cvphoto-preview" src="{{ asset('images/avatar-placehold.webp') }} " alt="CV_photo">
                             @endif
                             
 

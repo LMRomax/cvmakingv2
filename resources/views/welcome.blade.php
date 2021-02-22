@@ -124,7 +124,7 @@
             </div>
         </div>
 
-        <div class="container-fluid faq__container-fluid">
+        <div id="faq" class="container-fluid faq__container-fluid">
             <div class="faq__title-intro">
                 <h2>{{ __('translations.home.title_faq') }}</h2>
                 <p>{{ __('translations.home.intro_faq') }}</p>
@@ -191,7 +191,7 @@
                         <div class="users_opinions__card">
                             <div class="users-identity__users-opinions">
                                 <div>
-                                    <img src="{{ asset('images/luis.jpg') }}" alt="users pictures">
+                                    <img src="{{ asset('images/luis.webp') }}" alt="users pictures">
                                 </div>
                                 <div class="name__opinions">
                                     <p class="name">
@@ -219,7 +219,7 @@
                         <div class="users_opinions__card">
                             <div class="users-identity__users-opinions">
                                 <div>
-                                    <img src="{{ asset('images/catherine.jpg') }}" alt="users pictures">
+                                    <img src="{{ asset('images/catherine.webp') }}" alt="users pictures">
                                 </div>
                                 <div class="name__opinions">
                                     <p class="name">
@@ -247,7 +247,7 @@
                         <div class="users_opinions__card">
                             <div class="users-identity__users-opinions">
                                 <div>
-                                    <img src="{{ asset('images/anthony.jpg') }}" alt="users pictures">
+                                    <img src="{{ asset('images/anthony.webp') }}" alt="users pictures">
                                 </div>
                                 <div class="name__opinions">
                                     <p class="name">
@@ -280,4 +280,5 @@
 
 @section('javascript')
     <script type="text/javascript" src="{{ asset ('js/accordionFaq.js') }}"></script>
+    <script type="text/javascript" src="{{ asset ('js/welcomeScroll.js') }}"></script>
 @endsection

@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <title>CV</title>
 
     <style type="text/css">
@@ -61,7 +61,7 @@
             width: 40%;
             color: #fff;
             height: 275px;
-            padding: 16px 48px 16px 16px; 
+            padding: 16px 54px 16px 16px; 
         }
 
         .table-cell.description {
@@ -95,8 +95,8 @@
 
         .avatar{
             position: absolute;
-            top: 72px;
-            left: 330px;
+            top: 64px;
+            left: 334px;
             width: 128px;
             height: 128px;
         }

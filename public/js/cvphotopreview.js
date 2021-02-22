@@ -13,6 +13,6 @@ $('#cvphoto-modify').change(function() {
     }
     else
     {
-        $('#cvphoto-preview').attr('src', '../../images/avatar-placehold.png');
+        $('#cvphoto-preview').attr('src', '../../images/avatar-placehold.webp');
     }
 });

@@ -11,33 +11,19 @@
     <meta name="google-site-verification" content="2F89kue3ad7vGWHtQzL_htLv_IZxq3h1JtP8G6J8krQ" />
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="//img01.bt.co.uk/s/assets/sport/js/libs/jquery/1.10.2/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700|Open+Sans:300,400,600,700&display=swap" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700|Open+Sans:300,400,600,700&display=swap" rel="stylesheet" type="text/css" defer>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" defer>
     <link rel="icon" href="{{ asset('favicon.png')}}" />
 
     <!-- Styles -->
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/mediaqueries.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/slick.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/slick-theme.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/summernote-lite.css') }}" rel="stylesheet">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136305819-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-136305819-1');
-    </script>
-
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" defer>
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" defer>
+    <link href="{{ asset('css/mediaqueries.css') }}" rel="stylesheet" defer>
+    <link href="{{ asset('css/summernote-lite.css') }}" rel="stylesheet" defer>
 </head>
 
 <body>
@@ -64,11 +50,11 @@
             </a>
 
             @if(\Route::current()->getName() == 'index')
-                <a href="#modelCvList">
+                <a id="modelCvButton" href="#modelCvList">
                     <span>{{__('translations.menu.model_cv')}}</span>
                 </a>
 
-                <a href="#faq">
+                <a id="faqButton" href="#faq">
                     <span>{{__('translations.menu.faq')}}</span>
                 </a>
             @endif
@@ -140,7 +126,7 @@
     <div class="responsive-overlay" onclick="closeMenu()"></div>
     <script type="text/javascript" src="{{ asset ('js/loading.js') }}"></script>
     <script type="text/javascript" src="{{ asset ('js/responsivemenu.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset ('js/bootstrap.min.js') }}"></script>
     @yield('javascript')
 
     @section('pre-footer')
@@ -157,7 +143,7 @@
         <footer>
             <div class="row justify-content-center">
                 <div class="footer-first-block col-md-4 col-sm-4">
-                    <h3 class="footer-title-menu">{{__('translations.footer.advice-links')}}</h3>
+                    <p class="footer-title-menu">{{__('translations.footer.advice-links')}}</p>
                     <ul>
                         <li>
                             <a href="{{ route('index') }}">{{__('translations.footer.faq-link')}}</a>
@@ -168,7 +154,7 @@
                     </ul>
                 </div>
                 <div class="footer-second-block col-md-4 col-sm-4">
-                    <h3 class="footer-title-menu">{{__('translations.footer.menu-links')}}</h3>
+                    <p class="footer-title-menu">{{__('translations.footer.menu-links')}}</p>
                     <ul>
                         <li>
                             <a href="{{ route('index') }}">{{__('translations.footer.home-link')}}</a>
@@ -177,7 +163,7 @@
                 </div>
                 <div class="footer-third-block col-md-4 col-sm-4">
                     <div>
-                        <h3 class="footer-title-menu">{{__('translations.footer.legal-links')}}</h3>
+                        <p class="footer-title-menu">{{__('translations.footer.legal-links')}}</p>
                         <ul>
                             <li>
                                 <a href="{{ route('footer.cgu') }}">{{__('translations.footer.cgu-link')}}</a>

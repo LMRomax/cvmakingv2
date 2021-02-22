@@ -197,7 +197,7 @@
             ],
         ],
         'faq' => [
-            'money_question' => 'Pourquoi le prix n\'est que de 1€',
+            'money_question' => 'Pourquoi le prix n\'est que de 1€ ?',
             'money_answer' => 'Nous estimons que les offres d\'abonnements ne sont pas à l\'avantage du client. En effet
             elles ne sont pas toujours clairement annoncé et sont parfois très cher. Chez nous, vous prenez le temps 
             de créer votre CV, vous payer 1€, votre CV est à vous. C\'est simple et rapide !',
