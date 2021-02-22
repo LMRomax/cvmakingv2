@@ -20,10 +20,10 @@
     <link rel="icon" href="{{ asset('favicon.png')}}" />
 
     <!-- Styles -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" defer>
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" defer>
-    <link href="{{ asset('css/mediaqueries.css') }}" rel="stylesheet" defer>
-    <link href="{{ asset('css/summernote-lite.css') }}" rel="stylesheet" defer>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mediaqueries.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/summernote-lite.css') }}" rel="stylesheet">
 </head>
 
 <body>
