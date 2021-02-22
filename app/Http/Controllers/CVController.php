@@ -354,7 +354,7 @@ class CVController extends Controller
             ->setOption('margin-right', '0mm')
             ->setOption('margin-left', '0mm');
 
-            return $pdf->stream($template.'.pdf');
+            return $pdf->download($template.'.pdf');
         }
         else {
             abort(404);
