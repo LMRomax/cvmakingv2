@@ -17,7 +17,9 @@
   AddOutputFilterByType DEFLATE image/svg+xml
   AddOutputFilterByType DEFLATE image/x-icon
   AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/x-css
   AddOutputFilterByType DEFLATE text/html
   AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
   AddOutputFilterByType DEFLATE text/plain
 </IfModule>

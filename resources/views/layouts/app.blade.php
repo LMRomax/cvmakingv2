@@ -59,14 +59,14 @@
                 </a>
             @endif
         </nav>
-        <a href="javascript:void(0);" class="icon-responsive" onclick="openMenu()">
+        <a href="javascript:void(0);" class="icon-responsive" onclick="openMenu()" title="open_menu_responsive">
             <i class="fas fa-bars" size="lg"></i>
         </a>
     </div>  
 
     <div class="responsive-mobile-nav responsive-mobile-drawer responsive-mobile-drawer--west ">
         <div class="responsive-mobile-container">
-            <a href="javascript:void(0);" class="responsive-mobile-close" onclick="closeMenu()">
+            <a href="javascript:void(0);" class="responsive-mobile-close" onclick="closeMenu()" title="close_menu_responsive">
                 <i class="fas fa-times"></i>
             </a>
 
@@ -89,11 +89,11 @@
                 </a>
 
                 @if(\Route::current()->getName() == 'index')
-                    <a href="#modelCvList">
+                    <a id="modelCvButtonMobile" href="#modelCvList">
                         <span>{{__('translations.menu.model_cv')}}</span>
                     </a>
 
-                    <a href="#faq">
+                    <a id="faqButtonMobile" href="#faq">
                         <span>{{__('translations.menu.faq')}}</span>
                     </a>
                 @endif
