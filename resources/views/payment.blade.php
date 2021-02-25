@@ -53,6 +53,10 @@
                                        </button>
                                     </form>
                                 </div>
+
+                                <div class="warning-payment">
+                                    {{__('translations.payment.warning-payment')}}
+                                </div>
                             </div>
                             
                             <div class="error-cv__correct">

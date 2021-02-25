@@ -24,6 +24,10 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mediaqueries.css') }}" rel="stylesheet">
     <link href="{{ asset('css/summernote-lite.css') }}" rel="stylesheet">
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-8791970078485740" async 
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body>
