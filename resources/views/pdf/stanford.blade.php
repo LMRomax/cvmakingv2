@@ -52,7 +52,6 @@
             border-collapse: collapse; 
             margin-bottom: 0;
         }
-
         .table-row { 
             display: table-row; 
         }
@@ -73,6 +72,9 @@
             background-color: #424954;
             height: 100%;
             padding: 24px;
+            color: #fff;
+        }
+        .presentation-perso__stanford .table{
             color: #fff;
         }
         .presentation-perso__stanford .avatar {
