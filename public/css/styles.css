@@ -213,7 +213,7 @@ a:hover {
 }
 
 .alert-modal-danger {
-    background: #8BC34A;
+    background: #dc3545;
     color: #fff;
 }
 
@@ -934,6 +934,7 @@ textarea.form-control {
     color: #444;
     margin-bottom: 24px;
 }
+
 .users-opinions--fontion {
     font-size: 14px;
     color: #444;
@@ -1562,7 +1563,6 @@ textarea.form-control {
     padding: 0;
     background: none;
 }
-
 
 .cvPreviewFullPage .modal-dialog .preview-wrapper {
     position: relative;

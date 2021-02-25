@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Image;
 use PDF;
+use Image;
 use App\Cv;
 use App\User;
 use App\cvDesign;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Laravel\Cashier\Exceptions\IncompletePayment;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class CVController extends Controller
@@ -244,14 +245,21 @@ class CVController extends Controller
     public function handlePayment(Request $request) {
         $paymentMethod = $request['stripePaymentMethod'];
 
-        $stripeCharge = (new User)->charge(100, $paymentMethod);
+        try {
+            $stripeCharge = (new User)->charge(100, $paymentMethod);
+            session()->put('paymentDone', 1, 300);
+            return redirect()->route('payment-done');
 
-        session()->put('paymentDone', 1, 300);
-
-        return redirect()->route('payment-done');
+        } catch (IncompletePayment $exception) {
+            session()->put('paymentDone', "3DSecure", 300);
+            return redirect()->route(
+                'cashier.payment',
+                [$exception->payment->id, 'redirect' => route('payment-done')]
+            );
+        }
     }
 
-    public function donePayment() {
+    public function donePayment(Request $request) {
         $paymentDone = session()->get('paymentDone');
 
         if($paymentDone == 1) {
@@ -259,8 +267,32 @@ class CVController extends Controller
                 'payment-done'
             );
         }
+        else if($paymentDone == "3DSecure") {
+            if($request->success == "true") {
+                session()->put('3DSuccess', 1, 300);    
+                return view(
+                    'payment-done'
+                );
+            }
+            else {
+                session()->put('3DSuccess', 0, 300);  
+                if (LaravelLocalization::getCurrentLocale() == "fr") {
+                    return redirect()->route('payment')->with('error', 'Votre paiement a echoué !');
+                } else if (LaravelLocalization::getCurrentLocale() == "en") {
+                    return redirect()->route('payment')->with('error', 'Your payment has failed!');
+                } else if (LaravelLocalization::getCurrentLocale() == "es") {
+                    return redirect()->route('payment')->with('error', '¡Su pago ha fallado!');
+                }
+            }
+        }
         else {
-            abort(404);
+            if (LaravelLocalization::getCurrentLocale() == "fr") {
+                return redirect()->route('payment')->with('error', 'Votre paiement a echoué !');
+            } else if (LaravelLocalization::getCurrentLocale() == "en") {
+                return redirect()->route('payment')->with('error', 'Your payment has failed!');
+            } else if (LaravelLocalization::getCurrentLocale() == "es") {
+                return redirect()->route('payment')->with('error', '¡Su pago ha fallado!');
+            }
         }
     }
 
@@ -310,9 +342,13 @@ class CVController extends Controller
 
         $paymentDone = session()->get('paymentDone');
 
-        if($paymentDone == 1) {
+        $success3DSecure  = session()->get('3DSuccess');
+
+        if($paymentDone == 1 || $success3DSecure == 1) {
 
             session()->put('paymentDone', 0, 300);
+
+            session()->put('3DSuccess', 0, 300);
 
             $selected_design = session()->get('selectedDesign');
 
@@ -357,7 +393,13 @@ class CVController extends Controller
             return $pdf->download($template.'.pdf');
         }
         else {
-            abort(404);
+            if (LaravelLocalization::getCurrentLocale() == "fr") {
+                return redirect()->route('payment')->with('error', 'Votre paiement a echoué !');
+            } else if (LaravelLocalization::getCurrentLocale() == "en") {
+                return redirect()->route('payment')->with('error', 'Your payment has failed!');
+            } else if (LaravelLocalization::getCurrentLocale() == "es") {
+                return redirect()->route('payment')->with('error', '¡Su pago ha fallado!');
+            }
         }
     }
 }
