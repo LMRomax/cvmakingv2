@@ -1,4 +1,5 @@
 const stripe = Stripe('pk_test_51IIJZHClAE6OwaMjzIdcSvc6snxP4UCr3FMIAsKIbUoGYWVPSq0O6SEKzoQf7lesoxt4p21cUnq5Kn78YeaqgJvZ00cgUhxy06');
+//const stripe = Stripe('pk_live_51IIJZHClAE6OwaMj6SwBd5ggdsCG1lkbufBi6uwzRFvNtxfOtbaYAx33p0bsMhPll8HH9g6eeDlhPaUqtohvOplS00cO9B730G');
 
 var style = {
     base: {

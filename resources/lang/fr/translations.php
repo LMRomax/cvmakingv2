@@ -160,6 +160,8 @@
             'explain-download__not-satisfy-link' => 'Corriger mon CV',
             'stripe_title' => 'Veuillez renseignez vos coordonnées bancaire',
             'process' => 'Procéder au paiement',
+            'warning-payment' => 'Après paiement, aucun remboursement ne sera accepté ! Votre paiement vous octroie 
+            un unique téléchargement de votre CV sur le site.',
         ],
         'payment-done' => [
             'title' => 'Votre paiement à réussi',
@@ -167,7 +169,7 @@
             'download__title' => 'Téléchargez votre CV !', 
             'download_subtitle' => 'Cliquez sur le bouton ci-dessous pour le télécharger',
             'download-cv' => 'Téléchargez mon CV',
-            
+            'warning-payment' => 'Vous n\'avez le droit qu\'à un seul téléchargement.',
         ],
         'email' => [
             //

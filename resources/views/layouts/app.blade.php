@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('head-title')MyCVMaking</title>
-    <meta name="description" content="MyCVMaking est un service de création de CV."/>
+    <meta name="description" content="MyCVMaking est un service de création de CV au prix de 1€."/>
     <meta name="google-site-verification" content="2F89kue3ad7vGWHtQzL_htLv_IZxq3h1JtP8G6J8krQ" />
 
     <!-- Scripts -->

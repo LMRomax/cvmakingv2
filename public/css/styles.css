@@ -1852,6 +1852,25 @@ textarea.form-control {
     border-radius: 5px;
 }
 
+.warning-payment {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    margin-top: 24px;
+}
+
+.warning-payment .icon-warning__payment {
+    margin-right: 16px;
+    font-size: 24px;
+    color: var(--danger);
+}
+
+.warning-payment .text-warning__payment {
+    font-size: 16px;
+    color: var(--danger);
+    word-break: break-word;
+}
+
 /*-- Fin Footer --*/
 
 /* Pre footer */

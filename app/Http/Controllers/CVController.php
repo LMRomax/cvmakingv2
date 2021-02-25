@@ -262,6 +262,8 @@ class CVController extends Controller
     public function donePayment(Request $request) {
         $paymentDone = session()->get('paymentDone');
 
+        $cvDownloaded = session()->get('downloadedPDF');
+
         if($paymentDone == 1) {
             return view(
                 'payment-done'
@@ -286,14 +288,27 @@ class CVController extends Controller
             }
         }
         else {
-            if (LaravelLocalization::getCurrentLocale() == "fr") {
-                return redirect()->route('payment')->with('error', 'Votre paiement a echoué !');
-            } else if (LaravelLocalization::getCurrentLocale() == "en") {
-                return redirect()->route('payment')->with('error', 'Your payment has failed!');
-            } else if (LaravelLocalization::getCurrentLocale() == "es") {
-                return redirect()->route('payment')->with('error', '¡Su pago ha fallado!');
+            if($cvDownloaded == 1) {
+                if (LaravelLocalization::getCurrentLocale() == "fr") {
+                    return redirect()->route('payment')->with('error', 'Vous avez télécharger votre CV !');
+                } else if (LaravelLocalization::getCurrentLocale() == "en") {
+                    return redirect()->route('payment')->with('error', 'You have already downloaded your CV!');
+                } else if (LaravelLocalization::getCurrentLocale() == "es") {
+                    return redirect()->route('payment')->with('error', '¡Ya ha descargado su CV.!');
+                }
+            }
+            else {
+                if (LaravelLocalization::getCurrentLocale() == "fr") {
+                    return redirect()->route('payment')->with('error', 'Votre paiement a echoué !');
+                } else if (LaravelLocalization::getCurrentLocale() == "en") {
+                    return redirect()->route('payment')->with('error', 'Your payment has failed!');
+                } else if (LaravelLocalization::getCurrentLocale() == "es") {
+                    return redirect()->route('payment')->with('error', '¡Su pago ha fallado!');
+                }
             }
         }
+
+        session()->put('downloadedPDF', 0, 300);
     }
 
     public function PDF()
@@ -350,6 +365,8 @@ class CVController extends Controller
 
             session()->put('3DSuccess', 0, 300);
 
+            session()->put('downloadedPDF', 1, 300);
+
             $selected_design = session()->get('selectedDesign');
 
             $template = $selected_design['name'];
@@ -394,11 +411,11 @@ class CVController extends Controller
         }
         else {
             if (LaravelLocalization::getCurrentLocale() == "fr") {
-                return redirect()->route('payment')->with('error', 'Votre paiement a echoué !');
+                return redirect()->route('payment')->with('error', 'Vous avez télécharger votre CV !');
             } else if (LaravelLocalization::getCurrentLocale() == "en") {
-                return redirect()->route('payment')->with('error', 'Your payment has failed!');
+                return redirect()->route('payment')->with('error', 'You have already downloaded your CV!');
             } else if (LaravelLocalization::getCurrentLocale() == "es") {
-                return redirect()->route('payment')->with('error', '¡Su pago ha fallado!');
+                return redirect()->route('payment')->with('error', '¡Ya ha descargado su CV.!');
             }
         }
     }

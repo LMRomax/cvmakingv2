@@ -165,7 +165,7 @@
             'download__title' => 'Descargue su CV.', 
             'download_subtitle' => 'Haga clic en el botón siguiente para descargarlo',
             'download-cv' => 'Descargar mi CV',
-            
+            'warning-payment' => 'Sólo tienes derecho a una descarga.',
         ],
         'email' => [
             //

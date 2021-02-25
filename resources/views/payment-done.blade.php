@@ -39,6 +39,15 @@
                             <a href="{{ route('download-pdf') }}" class="download__button--correct">
                                 {{__('translations.payment-done.download-cv')}}
                             </a>
+
+                            <div class="warning-payment" style="align-items: center;">
+                                <div class="icon-warning__payment">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="text-warning__payment">
+                                    {{__('translations.payment-done.warning-payment')}}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

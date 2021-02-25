@@ -55,7 +55,12 @@
                                 </div>
 
                                 <div class="warning-payment">
-                                    {{__('translations.payment.warning-payment')}}
+                                    <div class="icon-warning__payment">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="text-warning__payment">
+                                        {{__('translations.payment.warning-payment')}}
+                                    </div>
                                 </div>
                             </div>
                             
