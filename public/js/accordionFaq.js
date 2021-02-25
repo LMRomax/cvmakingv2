@@ -15,12 +15,11 @@ for (i = 0; i < acc.length; i++) {
         }
 
         var panel = this.nextElementSibling;
-        panel.style.display = "block";
 
-        /*if (panel.style.display === "block") {
+        if (panel.style.display === "block") {
             panel.style.display = "none";
         } else {
             panel.style.display = "block";
-        }*/
+        }
     });
 }
