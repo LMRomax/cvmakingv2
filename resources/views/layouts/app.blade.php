@@ -130,15 +130,17 @@
     <script type="text/javascript" src="{{ asset ('js/alertmodal.js') }}"></script>
     @yield('javascript')
 
-    @section('pre-footer')
-        <div class="footer-go-cv">
-            <div class="container go-cv-container">
-                <h1>{{__('translations.footer.gocv_title')}}</h1>
-                <p>{{__('translations.footer.gocv_explain')}}</p>
-                <a href="{{ route('footer.contact') }}">{{__('translations.footer.gocv_button')}}</a>
+    @if(\Route::current()->getName() != 'footer.contact')
+        @section('pre-footer')
+            <div class="footer-go-cv">
+                <div class="container go-cv-container">
+                    <h1>{{__('translations.footer.gocv_title')}}</h1>
+                    <p>{{__('translations.footer.gocv_explain')}}</p>
+                    <a href="{{ route('footer.contact') }}">{{__('translations.footer.gocv_button')}}</a>
+                </div>
             </div>
-        </div>
-    @show
+        @show
+    @endif
 
     @section('footer')
         <footer>

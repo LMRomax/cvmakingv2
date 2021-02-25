@@ -971,7 +971,7 @@ class CVAjaxController extends Controller
         if($cv_exist != 0) {
             $cv = Cv::where('id', $cv_id)->first();
 
-            if($cv->loisirs == null) {
+            if($cv->langues == null) {
                 $cv_array[] = $request->except('_token');
             }
             else {

@@ -170,13 +170,6 @@
                             <p>{{__('translations.faq.fourth_answer')}}</p>
                         </div>
                     </div>
-
-                    <div class="faq__card">
-                        <button class="accordion">{{__('translations.faq.fifth_question')}}</button>
-                        <div class="panel">
-                            <p>{{__('translations.faq.fifth_answer')}}</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

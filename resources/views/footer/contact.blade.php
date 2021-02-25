@@ -9,7 +9,7 @@
         <div id="loader" class="loader"></div>
     </div>
 
-    <div id="is-load" class="is-load">
+    <div id="is-load" class="is-load" style="margin-bottom: 48px;">
         <div class="formbox-deco"></div>
 
         <div class="container formbox-container">
