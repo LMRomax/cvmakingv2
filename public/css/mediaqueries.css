@@ -294,7 +294,7 @@
         padding: 70px 225px;
     }
     footer {
-        padding: 70px 250px;
+        padding: 70px 150px;
     }
 }
 
@@ -304,6 +304,9 @@
     }
     footer {
         padding: 70px 100px;
+    }
+    .footer-first-block {
+        margin-bottom: 16px;
     }
 }
 
@@ -330,6 +333,9 @@
     .footer-second-block {
         margin-bottom: 40px;
     }
+    .footer-third-block {
+        margin-bottom: 40px;
+    }
     .footer-social-network {
         margin-bottom: 40px;
     }
@@ -338,5 +344,14 @@
     }
     .footer-link-network div:last-child {
         padding-right: 15px;
+    }
+    .footer-fourth-block {
+        justify-content: center;
+        text-align: left;
+    }
+    .footer-fourth-block .box--choose__lang {
+        bottom: -5px;
+        top: inherit;
+        left: 25%;
     }
 }

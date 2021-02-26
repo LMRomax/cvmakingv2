@@ -4,6 +4,11 @@
         'metatag' => [
             'title' => 'Write a professionnal CV for 1€',
         ],
+        'langs' => [
+            'french' => 'Français',
+            'english' => 'English',
+            'spanish' => 'Español',
+        ],
         'menu' => [
             'home' => 'Home',
             'model_cv' => 'Templates',

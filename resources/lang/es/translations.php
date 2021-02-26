@@ -4,6 +4,11 @@
         'metatag' => [
             'title' => 'Redactar un CV profesional por 1€',
         ],
+        'langs' => [
+            'french' => 'Français',
+            'english' => 'English',
+            'spanish' => 'Español',
+        ],
         'menu' => [
             'home' => 'Inicio',
             'model_cv' => 'Modelos',

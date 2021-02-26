@@ -149,7 +149,7 @@
     @section('footer')
         <footer>
             <div class="row justify-content-center">
-                <div class="footer-first-block col-md-4 col-sm-4">
+                <div class="footer-first-block col-lg-3 col-md-6">
                     <p class="footer-title-menu">{{__('translations.footer.advice-links')}}</p>
                     <ul>
                         <li>
@@ -160,7 +160,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="footer-second-block col-md-4 col-sm-4">
+                <div class="footer-second-block col-lg-3 col-md-6">
                     <p class="footer-title-menu">{{__('translations.footer.menu-links')}}</p>
                     <ul>
                         <li>
@@ -168,7 +168,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="footer-third-block col-md-4 col-sm-4">
+                <div class="footer-third-block col-lg-3 col-md-6">
                     <div>
                         <p class="footer-title-menu">{{__('translations.footer.legal-links')}}</p>
                         <ul>
@@ -181,7 +181,43 @@
                         </ul>
                     </div>
                 </div>
+                <div class="footer-fourth-block col-lg-3 col-md-6">
+                    <i class="fas fa-globe"></i>
+                    <div id="displayLangs" class="select-langs">
+                        @if(app()->getLocale() == "fr")
+                            Français
+                        @elseif(app()->getLocale() == "en")
+                            English
+                        @elseif(app()->getLocale() == "es")
+                            Español
+                        @endif
+                        <div class="arrow--select_lang">
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="box--choose__lang">
+                        <ul>
+                            <li @if(app()->getLocale() == "fr") class="lang--chosen" @endif>
+                                <a href="{{ LaravelLocalization::getLocalizedURL('fr') }}">
+                                    {{__('translations.langs.french')}}
+                                </a>
+                            </li>
+                            <li @if(app()->getLocale() == "en") class="lang--chosen" @endif>
+                                <a href="{{ LaravelLocalization::getLocalizedURL('en') }}">
+                                    {{__('translations.langs.english')}}
+                                </a>
+                            </li>
+                            <li @if(app()->getLocale() == "es") class="lang--chosen" @endif>
+                                <a href="{{ LaravelLocalization::getLocalizedURL('es') }}">
+                                    {{__('translations.langs.spanish')}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </footer>
     @show
+    <script type="text/javascript" src="{{ asset ('js/boxLangs.js') }}"></script>
 </html>

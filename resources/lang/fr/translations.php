@@ -4,6 +4,11 @@
         'metatag' => [
             'title' => 'Créer un CV professionnel pour 1€',
         ],
+        'langs' => [
+            'french' => 'Français',
+            'english' => 'English',
+            'spanish' => 'Español',
+        ],
         'menu' => [
             'home' => 'Accueil',
             'model_cv' => 'Modèles',
