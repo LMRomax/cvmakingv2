@@ -7,7 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>MyCVMaking - {{__('translations.metatag.title')}}</title>
-    <meta name="description" content="MyCVMaking est un service de création de CV au prix de 1€."/>
+    <meta name="description" content="Rédigez un CV professionnel en 10 minutes seulement grâce à notre créateur de CV. 
+    Introduire des données et télécharger votre CV instantanément au format PDF. Peut s'éditer en tout lieu et à tout instant. 
+    Un large choix de modèles de curriculum vitae professionnels et d'exemples de CV."/>
     <meta name="google-site-verification" content="2F89kue3ad7vGWHtQzL_htLv_IZxq3h1JtP8G6J8krQ" />
 
     <!-- Scripts -->

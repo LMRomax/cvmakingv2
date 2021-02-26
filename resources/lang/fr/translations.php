@@ -16,7 +16,7 @@
             'faq' => 'FAQ',
         ],
         'home' => [
-            'main_title' => 'Rédiger votre CV pour',
+            'main_title' => 'Rédigez votre CV pour',
             'main_1euros' => '1€',
             'main_intro' => 'Écrivez votre CV et téléchargez-le en moins de 5 minutes.',
             'main_button' => 'Créer mon CV',

@@ -22,6 +22,17 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
     <title>CV</title>
 
+    <noscript>
+        <style>
+            .page {
+                display: none;
+            }
+        </style>
+        <p>Please enable javascript to continue</p>
+    </noscript>
+
+    <script type="text/javascript" src="{{ asset('js/previewPDFAccess.js') }}"></script>
+
     <style media="print" type="text/css">
         @page {
             size: A4;
@@ -638,12 +649,5 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
             </section>
         @endif
     </div>
-    <script>
-        if (window.location !== window.parent.location) { 
-            // In iframe
-        } else {	 
-            window.location = "/error/not-authorized";
-        }
-    </script>
 </body>
 </html>

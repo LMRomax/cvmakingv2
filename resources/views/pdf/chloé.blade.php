@@ -23,6 +23,17 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <title>CV</title>
 
+    <noscript>
+        <style>
+            .page {
+                display: none;
+            }
+        </style>
+        <p>Please enable javascript to continue</p>
+    </noscript>
+
+    <script type="text/javascript" src="{{ asset('js/previewPDFAccess.js') }}"></script>
+
     <style type="text/css">
         @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
@@ -693,12 +704,5 @@
             </div>
         </div>
     </div>
-    <script>
-        if (window.location !== window.parent.location) { 
-            // In iframe
-        } else {	 
-            window.location = "/error/not-authorized";
-        }
-    </script>
 </body>
 </html>
