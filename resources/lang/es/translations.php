@@ -1,6 +1,9 @@
 <?php
 
     return [
+        'metatag' => [
+            'title' => 'Redactar un CV profesional por 1€',
+        ],
         'menu' => [
             'home' => 'Inicio',
             'model_cv' => 'Modelos',

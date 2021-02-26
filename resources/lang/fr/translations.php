@@ -1,6 +1,9 @@
 <?php
 
     return [
+        'metatag' => [
+            'title' => 'Créer un CV professionnel pour 1€',
+        ],
         'menu' => [
             'home' => 'Accueil',
             'model_cv' => 'Modèles',
@@ -200,9 +203,9 @@
         ],
         'faq' => [
             'money_question' => 'Pourquoi le prix n\'est que de 1€ ?',
-            'money_answer' => 'Nous estimons que les offres d\'abonnements ne sont pas à l\'avantage du client. En effet
-            elles ne sont pas toujours clairement annoncé et sont parfois très cher. Chez nous, vous prenez le temps 
-            de créer votre CV, vous payer 1€, votre CV est à vous. C\'est simple et rapide !',
+            'money_answer' => 'Nous estimons que les offres d\'abonnements ne sont pas à l\'avantage du client. 
+            En effet elles ne sont pas toujours clairement annoncé et sont parfois très chères. Chez nous, vous 
+            prenez le temps de créer votre CV, vous payer 1 €, votre CV est à vous. C\'est simple et rapide !',
             'first_question' => 'Qu\'est-ce qu\'un curriculum vitae ?',
             'second_question' => 'Quelles sont les éléments qui composent un CV ?',
             'third_question' => 'Qu\'est qu\'un CV chronologique ?',
@@ -210,45 +213,45 @@
             'fifth_question' => 'Comment rédiger un CV parfait ?',
             'first_answer' => 'Un CV résume le parcours professionnel d\'une personne.
             C’est une abréviation du terme latin : curriculum vitae, qui signifie parcours de vie.
-            Votre CV récapitule vos études, vos diplômes, vos expériences professionnelles, 
+            Votre CV récapitule vos études, vos diplômes, vos expériences professionnelles,
             vos compétences et vos principales qualités.
-            Le CV permet au recruteur de se forger rapidement une opinion sur votre expérience et vos compétences, 
+            Le CV permet au recruteur de se forger rapidement une opinion sur votre expérience et vos compétences,
             afin de juger vos aptitudes dans le poste que vous visez.',
             'second_answer' => 'Un CV est généralement construit avec les informations suivantes :
-            Données personnelles indispensables : le nom et le prénom, l\'adresse, la localité, l\'adresse e-mail, le(s) numéro(s) 
-            de téléphone. Informations complémentaires/facultatives : une photo d’identité, le sexe, la date de naissance, 
-            le lieu de naissance, la nationalité, l\'état civil, le permis de conduire, un lien vers un site internet ou vers 
+            Données personnelles indispensables : le nom et le prénom, l\'adresse, la localité, l\'adresse e-mail, le(s) numéro(s)
+            de téléphone. Informations complémentaires/facultatives : une photo d’identité, le sexe, la date de naissance,
+            le lieu de naissance, la nationalité, l\'état civil, le permis de conduire, un lien vers un site internet ou vers
             votre/vos profil(s) sur les réseaux sociaux (LinkedIn, Facebook).
-            Expérience académique et/ou professionnelles : vos études (indiquez l\'obtention d\'un certificat ou d\'un diplôme 
-            ainsi que leur date d\'émission), votre expérience professionnelle (employeurs, postes et missions effectués), 
-            vos compétences, les langues, les cours (formations), les stages déjà effectués, les activités extra-professionnelles 
+            Expérience académique et/ou professionnelles : vos études (indiquez l\'obtention d\'un certificat ou d\'un diplôme
+            ainsi que leur date d\'émission), votre expérience professionnelle (employeurs, postes et missions effectués),
+            vos compétences, les langues, les cours (formations), les stages déjà effectués, les activités extra-professionnelles
             (activités bénévoles par exemple), vos références, vos loisirs et vos traits de caractère.
             Les informations doivent être complètes et correctes (attention aux langues, que vous devez maîtriser effectivement).',
             'third_answer' => 'Le CV chronologique apparaît comme le CV le plus utilisé et le plus connu. Ses caractéristiques
-            impliquent que les éléments liés à la ligne du temps, les études et les expériences professionnelles par exemple, 
-            soient mentionnés au sein d\'une structure chronologique inversée. Votre dernier emploi (le plus récent) sera placé 
-            en première position (en haut de la liste), votre premier emploi sera placé en dernière position (en bas de la liste). 
-            Cette règle s\'applique également à la mention des autres expériences que vous ajoutez sur votre CV, et qui se sont 
-            déroulées au cours d\'une période déterminée. Exemples: les études, les cours suivis, les stages effectués et les 
+            impliquent que les éléments liés à la ligne du temps, les études et les expériences professionnelles par exemple,
+            soient mentionnés au sein d\'une structure chronologique inversée. Votre dernier emploi (le plus récent) sera placé
+            en première position (en haut de la liste), votre premier emploi sera placé en dernière position (en bas de la liste).
+            Cette règle s\'applique également à la mention des autres expériences que vous ajoutez sur votre CV, et qui se sont
+            déroulées au cours d\'une période déterminée. Exemples: les études, les cours suivis, les stages effectués et les
             activités extra-professionnelles.
-            L\'ordre des éléments de votre CV se présente comme suit: les données personnelles et les données de contact 
-            vous concernant, suivies par un éventuel profil personnel (concis). Ensuite, vous mentionnez vos études suivies 
+            L\'ordre des éléments de votre CV se présente comme suit: les données personnelles et les données de contact
+            vous concernant, suivies par un éventuel profil personnel (concis). Ensuite, vous mentionnez vos études suivies
             par d\'éventuelles expériences (professionnelles), les langues, vos compétences, vos caractéristiques et vos intérêts.',
-            'fourth_answer' => 'Vous pouvez Rédigez un CV au moyen d\'un logiciel de traitement de texte tel que Microsoft Word. 
-            Cherchez un exemple de CV gratuit ou un modèle de CV sur la toile internet et évaluez la possibilité de les reproduire. 
-            Ou optez pour l\'utilisation de notre générateur de CV avec lequel il vous suffit uniquement d\'introduire vos données 
-            et de télécharger un CV parfait en 15 minutes seulement. Vous pouvez évidemment appliquer la même procédure pour 
+            'fourth_answer' => 'Vous pouvez Rédigez un CV au moyen d\'un logiciel de traitement de texte tel que Microsoft Word.
+            Cherchez un exemple de CV gratuit ou un modèle de CV sur la toile internet et évaluez la possibilité de les reproduire.
+            Ou optez pour l\'utilisation de notre générateur de CV avec lequel il vous suffit uniquement d\'introduire vos données
+            et de télécharger un CV parfait en 15 minutes seulement. Vous pouvez évidemment appliquer la même procédure pour
             rédiger une lettre de motivation.
-            Lorsque vous avez finalisé votre CV et votre lettre de motivation, procédez à l\'envoi de ceux-ci par le biais d\'un 
+            Lorsque vous avez finalisé votre CV et votre lettre de motivation, procédez à l\'envoi de ceux-ci par le biais d\'un
             courriel à l\'adresse relative à l\'emploi convoité.',
             'fifth_answer' => 'Dans notre générateur de CV Vous trouverez des astuces par rubrique pour Rédigez votre CV de manière optimale. Voici quelques astuces générales:
-            Communiquez uniquement des informations pertinentes qui présentent une valeur ajoutée pour l\'emploi pour 
+            Communiquez uniquement des informations pertinentes qui présentent une valeur ajoutée pour l\'emploi pour
             lequel vous sollicitez.
-            Ne mentionnez pas de loisirs ou d\'intérêts qui présentent un caractère bizarre ou qui peuvent soulever 
+            Ne mentionnez pas de loisirs ou d\'intérêts qui présentent un caractère bizarre ou qui peuvent soulever
             certaines questions.
             Communiquez les informations principales sur la première page. Ajoutez un profil personnel concis vous concernant.
             Utilisez des listes à puces et des listes numérotées afin d\'optimaliser la clarté de votre CV pour les recruteurs.
-            Optez toujours pour la rédaction d\'un CV chronologique, hormis en cas de dispositions spéciales stipulées par 
+            Optez toujours pour la rédaction d\'un CV chronologique, hormis en cas de dispositions spéciales stipulées par
             l\'offre d\'emploi.
             Présentez votre CV de manière brève mais persuasive. Mentionnez les informations importantes de manière concise.',
         ],

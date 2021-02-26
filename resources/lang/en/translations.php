@@ -1,6 +1,9 @@
 <?php
 
     return [
+        'metatag' => [
+            'title' => 'Write a professionnal CV for 1€',
+        ],
         'menu' => [
             'home' => 'Home',
             'model_cv' => 'Templates',
