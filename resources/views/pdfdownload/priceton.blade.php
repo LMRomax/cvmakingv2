@@ -521,14 +521,5 @@ setlocale(LC_ALL, app()->getLocale() . '_' . strtoupper(app()->getLocale()));
             </section>
         @endif
     </div>
-
-    <script>
-        if (window.location !== window.parent.location) { 
-            // In iframe
-        } else {	 
-            window.location = "/error/not-authorized";
-        }
-    </script>
 </body>
-
 </html>

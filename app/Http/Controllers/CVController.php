@@ -313,6 +313,8 @@ class CVController extends Controller
 
     public function PDF()
     {
+        $previewPDFAccess = session()->get('previewPDFAccess');
+
         $selected_design = session()->get('selectedDesign');
 
         $template = $selected_design['name'];
@@ -391,7 +393,7 @@ class CVController extends Controller
     
             $cv_color = session()->get('cvColor');
 
-            $pdf = PDF::loadView('pdf.'.$template, compact(
+            $pdf = PDF::loadView('pdfdownload.'.$template, compact(
                 'cv',
                 'cv_basics',
                 'cv_xps',

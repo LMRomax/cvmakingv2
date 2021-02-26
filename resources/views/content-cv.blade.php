@@ -105,7 +105,7 @@
                                 <div class="iframe-isload" style="display: none;">
                                     <div id="iframe-loader" class="loader"></div>
                                 </div>
-                                <div class="preview--inner" data-toggle="modal" data-target="#cvModal"> 
+                                <div class="preview--inner" data-toggle="modal" data-target="#cvModal">
                                     <iframe src="{{ route('pdf') }}" width="100%" class="template-preview__iframe"
                                         scrolling="no" id="previewCVIframe" data-toggle="modal" data-target="#cvModal">
                                     </iframe>
@@ -120,7 +120,7 @@
                 <div class="btn-center">
                     <a href="{{ route('payment') }}" class="btn btn-outformbox">
                         <div class="btn_download_left"><i class="fas fa-download"></i></div>
-                        {{__('translations.makingcv.button_downloadcv') }}
+                        {{ __('translations.makingcv.button_downloadcv') }}
                     </a>
                 </div>
             </div>
@@ -136,8 +136,7 @@
         <div class="modal-dialog" role="document">
             <div class="preview-wrapper">
                 <div class="preview--inner">
-                    <iframe src="{{ route('pdf') }}" class="template-preview__iframe"
-                        scrolling="no">
+                    <iframe src="{{ route('pdf') }}" class="template-preview__iframe" scrolling="no">
                     </iframe>
                 </div>
             </div>
@@ -153,6 +152,7 @@
         $(document).ready(function() {
             autosize(document.querySelectorAll('textarea'));
         });
+
     </script>
     <script type="text/javascript" src="{{ asset('js/contentCv.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/cvAjax.js') }}"></script>

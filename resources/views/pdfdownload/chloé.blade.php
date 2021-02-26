@@ -693,12 +693,5 @@
             </div>
         </div>
     </div>
-    <script>
-        if (window.location !== window.parent.location) { 
-            // In iframe
-        } else {	 
-            window.location = "/error/not-authorized";
-        }
-    </script>
 </body>
 </html>

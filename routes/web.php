@@ -37,6 +37,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
     Route::get('/preview-pdf', 'CVController@PDF')->name('pdf');
 
     Route::get('/download-pdf', 'CVController@downloadPDF')->name('download-pdf');
+
+    Route::get('/error/not-authorized', 'errorController@notAuthorized')->name('not-authorized');
     
     /******Route Footer******/
     
@@ -54,12 +56,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
         Route::get('/privacy-policy', function() {
             return view('footer.polconfident');
         })->name('polconfident');
-    });
-
-    /*-----Route pour vérifier design cv------*/
-
-    Route::get('/barkley', function () {
-        return view('pdf.barkley');
     });
 });
 
