@@ -27,6 +27,16 @@
     <link href="{{ asset('css/mediaqueries.css') }}" rel="stylesheet">
     <link href="{{ asset('css/summernote-lite.css') }}" rel="stylesheet">
 
+    <!-- Google analytics -->s
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKSMD7X6W5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HKSMD7X6W5');
+    </script>
+
     <!-- Google AdSense -->
     <script data-ad-client="ca-pub-8791970078485740" async 
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
